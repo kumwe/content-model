@@ -1,0 +1,212 @@
+[
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\ContentEntry",
+    "new_fqcn": "Kumwe\\Content\\Domain\\ContentEntry",
+    "source_path": "src/Content/Domain/ContentEntry.php",
+    "target_path": "src/Domain/ContentEntry.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\ContentRevision",
+    "new_fqcn": "Kumwe\\Content\\Domain\\ContentRevision",
+    "source_path": "src/Content/Domain/ContentRevision.php",
+    "target_path": "src/Domain/ContentRevision.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\ContentStatus",
+    "new_fqcn": "Kumwe\\Content\\Domain\\ContentStatus",
+    "source_path": "src/Content/Domain/ContentStatus.php",
+    "target_path": "src/Domain/ContentStatus.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\ContentTypeDefinition",
+    "new_fqcn": "Kumwe\\Content\\Domain\\ContentTypeDefinition",
+    "source_path": "src/Content/Domain/ContentTypeDefinition.php",
+    "target_path": "src/Domain/ContentTypeDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\ExpectedVersion",
+    "new_fqcn": "Kumwe\\Content\\Domain\\ExpectedVersion",
+    "source_path": "src/Content/Domain/ExpectedVersion.php",
+    "target_path": "src/Domain/ExpectedVersion.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\FieldDefinition",
+    "new_fqcn": "Kumwe\\Content\\Domain\\FieldDefinition",
+    "source_path": "src/Content/Domain/FieldDefinition.php",
+    "target_path": "src/Domain/FieldDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\InvalidContentData",
+    "new_fqcn": "Kumwe\\Content\\Domain\\InvalidContentData",
+    "source_path": "src/Content/Domain/InvalidContentData.php",
+    "target_path": "src/Domain/InvalidContentData.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\InvalidTranslationGroup",
+    "new_fqcn": "Kumwe\\Content\\Domain\\InvalidTranslationGroup",
+    "source_path": "src/Content/Domain/InvalidTranslationGroup.php",
+    "target_path": "src/Domain/InvalidTranslationGroup.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\JsonSchemaValidator",
+    "new_fqcn": "Kumwe\\Content\\Domain\\JsonSchemaValidator",
+    "source_path": "src/Content/Domain/JsonSchemaValidator.php",
+    "target_path": "src/Domain/JsonSchemaValidator.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\PublicationWindow",
+    "new_fqcn": "Kumwe\\Content\\Domain\\PublicationWindow",
+    "source_path": "src/Content/Domain/PublicationWindow.php",
+    "target_path": "src/Domain/PublicationWindow.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\SchemaCompatibilityChecker",
+    "new_fqcn": "Kumwe\\Content\\Domain\\SchemaCompatibilityChecker",
+    "source_path": "src/Content/Domain/SchemaCompatibilityChecker.php",
+    "target_path": "src/Domain/SchemaCompatibilityChecker.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\TranslationGroup",
+    "new_fqcn": "Kumwe\\Content\\Domain\\TranslationGroup",
+    "source_path": "src/Content/Domain/TranslationGroup.php",
+    "target_path": "src/Domain/TranslationGroup.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\TranslationGroupMember",
+    "new_fqcn": "Kumwe\\Content\\Domain\\TranslationGroupMember",
+    "source_path": "src/Content/Domain/TranslationGroupMember.php",
+    "target_path": "src/Domain/TranslationGroupMember.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Domain\\VersionConflict",
+    "new_fqcn": "Kumwe\\Content\\Domain\\VersionConflict",
+    "source_path": "src/Content/Domain/VersionConflict.php",
+    "target_path": "src/Domain/VersionConflict.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Workflow\\Domain\\InvalidWorkflowTransition",
+    "new_fqcn": "Kumwe\\Content\\Workflow\\Domain\\InvalidWorkflowTransition",
+    "source_path": "src/Workflow/Domain/InvalidWorkflowTransition.php",
+    "target_path": "src/Workflow/Domain/InvalidWorkflowTransition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Workflow\\Domain\\Workflow",
+    "new_fqcn": "Kumwe\\Content\\Workflow\\Domain\\Workflow",
+    "source_path": "src/Workflow/Domain/Workflow.php",
+    "target_path": "src/Workflow/Domain/Workflow.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Workflow\\Domain\\WorkflowDefinition",
+    "new_fqcn": "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
+    "source_path": "src/Workflow/Domain/WorkflowDefinition.php",
+    "target_path": "src/Workflow/Domain/WorkflowDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Workflow\\Domain\\WorkflowStateDefinition",
+    "new_fqcn": "Kumwe\\Content\\Workflow\\Domain\\WorkflowStateDefinition",
+    "source_path": "src/Workflow/Domain/WorkflowStateDefinition.php",
+    "target_path": "src/Workflow/Domain/WorkflowStateDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Workflow\\Domain\\WorkflowTransitionDefinition",
+    "new_fqcn": "Kumwe\\Content\\Workflow\\Domain\\WorkflowTransitionDefinition",
+    "source_path": "src/Workflow/Domain/WorkflowTransitionDefinition.php",
+    "target_path": "src/Workflow/Domain/WorkflowTransitionDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\ContentBrowseQuery",
+    "new_fqcn": "Kumwe\\Content\\Application\\ContentBrowseQuery",
+    "source_path": "src/Content/Application/ContentBrowseQuery.php",
+    "target_path": "src/Application/ContentBrowseQuery.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\ContentModelNotFound",
+    "new_fqcn": "Kumwe\\Content\\Application\\ContentModelNotFound",
+    "source_path": "src/Content/Application/ContentModelNotFound.php",
+    "target_path": "src/Application/ContentModelNotFound.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\ContentModelRepository",
+    "new_fqcn": "Kumwe\\Content\\Application\\ContentModelRepository",
+    "source_path": "src/Content/Application/ContentModelRepository.php",
+    "target_path": "src/Application/ContentModelRepository.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\ContentNotFound",
+    "new_fqcn": "Kumwe\\Content\\Application\\ContentNotFound",
+    "source_path": "src/Content/Application/ContentNotFound.php",
+    "target_path": "src/Application/ContentNotFound.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\ContentPage",
+    "new_fqcn": "Kumwe\\Content\\Application\\ContentPage",
+    "source_path": "src/Content/Application/ContentPage.php",
+    "target_path": "src/Application/ContentPage.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\ContentRecord",
+    "new_fqcn": "Kumwe\\Content\\Application\\ContentRecord",
+    "source_path": "src/Content/Application/ContentRecord.php",
+    "target_path": "src/Application/ContentRecord.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\ContentRepository",
+    "new_fqcn": "Kumwe\\Content\\Application\\ContentRepository",
+    "source_path": "src/Content/Application/ContentRepository.php",
+    "target_path": "src/Application/ContentRepository.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\ContentSearchRepository",
+    "new_fqcn": "Kumwe\\Content\\Application\\ContentSearchRepository",
+    "source_path": "src/Content/Application/ContentSearchRepository.php",
+    "target_path": "src/Application/ContentSearchRepository.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\IncompatibleDefinition",
+    "new_fqcn": "Kumwe\\Content\\Application\\IncompatibleDefinition",
+    "source_path": "src/Content/Application/IncompatibleDefinition.php",
+    "target_path": "src/Application/IncompatibleDefinition.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\SiteScopedContentRepository",
+    "new_fqcn": "Kumwe\\Content\\Application\\SiteScopedContentRepository",
+    "source_path": "src/Content/Application/SiteScopedContentRepository.php",
+    "target_path": "src/Application/SiteScopedContentRepository.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/app",
+    "old_fqcn": "Kumwe\\App\\Content\\Application\\TranslationGroupRepository",
+    "new_fqcn": "Kumwe\\Content\\Application\\TranslationGroupRepository",
+    "source_path": "src/Content/Application/TranslationGroupRepository.php",
+    "target_path": "src/Application/TranslationGroupRepository.php"
+  }
+]
