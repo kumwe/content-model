@@ -75,7 +75,9 @@ final readonly class ContentTypeDefinition
         if (($schema['type'] ?? null) !== 'object' || array_is_list($schema)) {
             throw new InvalidArgumentException('A content type schema must describe a JSON object.');
         }
-        $this->schema = $schema;
+        /** @var array<string, mixed> $snapshot */
+        $snapshot = JsonValueSnapshot::copy($schema);
+        $this->schema = $snapshot;
     }
 
     /**

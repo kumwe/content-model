@@ -1,2901 +1,2878 @@
 {
-    "schema": "kumwe-package-public-api/v1",
+    "schema": "kumwe-public-api-details/v1",
     "package": "kumwe/content-model",
     "release": "0.1.1",
     "namespace": "Kumwe\\Content\\",
-    "symbols": {
-        "Kumwe\\Content\\Application\\ContentBrowseQuery": {
+    "symbols": [
+        {
+            "name": "Kumwe\\Content\\Application\\ContentBrowseQuery",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Application/ContentBrowseQuery.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "search": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "status": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "contentType": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "scope": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "sort": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "page": {
-                    "type": "int",
-                    "static": false,
-                    "readonly": true
-                },
-                "perPage": {
-                    "type": "int",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "search",
                             "type": "string",
                             "optional": true,
+                            "default": "''",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "status",
                             "type": "string",
                             "optional": true,
+                            "default": "''",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "contentType",
                             "type": "string",
                             "optional": true,
+                            "default": "''",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "scope",
                             "type": "string",
                             "optional": true,
+                            "default": "'active'",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "sort",
                             "type": "string",
                             "optional": true,
+                            "default": "'updated_desc'",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "page",
                             "type": "int",
                             "optional": true,
+                            "default": "1",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "perPage",
                             "type": "int",
                             "optional": true,
+                            "default": "25",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "withPage": {
-                    "visibility": "public",
+                {
+                    "name": "withPage",
                     "static": false,
                     "parameters": [
                         {
                             "name": "page",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Application\\ContentBrowseQuery"
                 },
-                "toQueryParameters": {
-                    "visibility": "public",
+                {
+                    "name": "toQueryParameters",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Application\\ContentModelNotFound": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Application/ContentModelNotFound.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": "RuntimeException",
-            "interfaces": [
-                "Stringable",
-                "Throwable"
             ],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "properties": [
+                {
+                    "name": "search",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "status",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "contentType",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "scope",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "sort",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "page",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "perPage",
+                    "type": "int",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentModelNotFound",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "kind",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "identifier",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "version",
                             "type": "?int",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Application\\ContentModelRepository": {
+        {
+            "name": "Kumwe\\Content\\Application\\ContentModelRepository",
             "kind": "interface",
-            "stability": "stable",
-            "file": "src/Application/ContentModelRepository.php",
-            "abstract": true,
-            "final": false,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "contentTypes": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "contentTypes",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "array"
                 },
-                "contentType": {
-                    "visibility": "public",
+                {
+                    "name": "contentType",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "identifier",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "version",
                             "type": "?int",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Domain\\ContentTypeDefinition"
                 },
-                "insertContentType": {
-                    "visibility": "public",
+                {
+                    "name": "insertContentType",
                     "static": false,
                     "parameters": [
                         {
                             "name": "definition",
                             "type": "Kumwe\\Content\\Domain\\ContentTypeDefinition",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "publishContentType": {
-                    "visibility": "public",
+                {
+                    "name": "publishContentType",
                     "static": false,
                     "parameters": [
                         {
                             "name": "definition",
                             "type": "Kumwe\\Content\\Domain\\ContentTypeDefinition",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "expectedVersion",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "workflows": {
-                    "visibility": "public",
+                {
+                    "name": "workflows",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "array"
                 },
-                "workflow": {
-                    "visibility": "public",
+                {
+                    "name": "workflow",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "identifier",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "version",
                             "type": "?int",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition"
                 },
-                "insertWorkflow": {
-                    "visibility": "public",
+                {
+                    "name": "insertWorkflow",
                     "static": false,
                     "parameters": [
                         {
                             "name": "definition",
                             "type": "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "publishWorkflow": {
-                    "visibility": "public",
+                {
+                    "name": "publishWorkflow",
                     "static": false,
                     "parameters": [
                         {
                             "name": "definition",
                             "type": "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "expectedVersion",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Application\\ContentNotFound": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Application/ContentNotFound.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": "RuntimeException",
-            "interfaces": [
-                "Stringable",
-                "Throwable"
             ],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentNotFound",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Application\\ContentPage": {
+        {
+            "name": "Kumwe\\Content\\Application\\ContentPage",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Application/ContentPage.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "items": {
-                    "type": "array",
-                    "static": false,
-                    "readonly": true
-                },
-                "query": {
-                    "type": "Kumwe\\Content\\Application\\ContentBrowseQuery",
-                    "static": false,
-                    "readonly": true
-                },
-                "hasPrevious": {
-                    "type": "bool",
-                    "static": false,
-                    "readonly": true
-                },
-                "hasNext": {
-                    "type": "bool",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "items",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "query",
                             "type": "Kumwe\\Content\\Application\\ContentBrowseQuery",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "hasPrevious",
                             "type": "bool",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "hasNext",
                             "type": "bool",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [
+                {
+                    "name": "items",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "query",
+                    "type": "Kumwe\\Content\\Application\\ContentBrowseQuery",
+                    "readonly": true
+                },
+                {
+                    "name": "hasPrevious",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "hasNext",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Application\\ContentRecord": {
+        {
+            "name": "Kumwe\\Content\\Application\\ContentRecord",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Application/ContentRecord.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "entry": {
-                    "type": "Kumwe\\Content\\Domain\\ContentEntry",
-                    "static": false,
-                    "readonly": true
-                },
-                "contentTypeId": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "workflowId": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "createdAt": {
-                    "type": "DateTimeImmutable",
-                    "static": false,
-                    "readonly": true
-                },
-                "updatedAt": {
-                    "type": "DateTimeImmutable",
-                    "static": false,
-                    "readonly": true
-                },
-                "deletedAt": {
-                    "type": "?DateTimeImmutable",
-                    "static": false,
-                    "readonly": true
-                },
-                "contentTypeVersion": {
-                    "type": "int",
-                    "static": false,
-                    "readonly": true
-                },
-                "workflowVersion": {
-                    "type": "int",
-                    "static": false,
-                    "readonly": true
-                },
-                "siteIdentifier": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "entry",
                             "type": "Kumwe\\Content\\Domain\\ContentEntry",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "contentTypeId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "workflowId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "createdAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "updatedAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "deletedAt",
                             "type": "?DateTimeImmutable",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "contentTypeVersion",
                             "type": "int",
                             "optional": true,
+                            "default": "1",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "workflowVersion",
                             "type": "int",
                             "optional": true,
+                            "default": "1",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "siteIdentifier",
                             "type": "string",
                             "optional": true,
+                            "default": "'default'",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "withEntry": {
-                    "visibility": "public",
+                {
+                    "name": "withEntry",
                     "static": false,
                     "parameters": [
                         {
                             "name": "entry",
                             "type": "Kumwe\\Content\\Domain\\ContentEntry",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "updatedAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Application\\ContentRecord"
                 },
-                "withDeletedAt": {
-                    "visibility": "public",
+                {
+                    "name": "withDeletedAt",
                     "static": false,
                     "parameters": [
                         {
                             "name": "deletedAt",
                             "type": "?DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "updatedAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Application\\ContentRecord"
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [
+                {
+                    "name": "entry",
+                    "type": "Kumwe\\Content\\Domain\\ContentEntry",
+                    "readonly": true
+                },
+                {
+                    "name": "contentTypeId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "createdAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "updatedAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "deletedAt",
+                    "type": "?DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "contentTypeVersion",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowVersion",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "siteIdentifier",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Application\\ContentRepository": {
+        {
+            "name": "Kumwe\\Content\\Application\\ContentRepository",
             "kind": "interface",
-            "stability": "stable",
-            "file": "src/Application/ContentRepository.php",
-            "abstract": true,
-            "final": false,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "all": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "all",
                     "static": false,
                     "parameters": [
                         {
                             "name": "limit",
                             "type": "int",
                             "optional": true,
+                            "default": "100",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "includeDeleted",
                             "type": "bool",
                             "optional": true,
+                            "default": "false",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "offset",
                             "type": "int",
                             "optional": true,
+                            "default": "0",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "array"
                 },
-                "find": {
-                    "visibility": "public",
+                {
+                    "name": "find",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "includeDeleted",
                             "type": "bool",
                             "optional": true,
+                            "default": "false",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Application\\ContentRecord"
                 },
-                "findPublishedById": {
-                    "visibility": "public",
+                {
+                    "name": "findPublishedById",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "time",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Application\\ContentRecord"
                 },
-                "findPublishedBySlug": {
-                    "visibility": "public",
+                {
+                    "name": "findPublishedBySlug",
                     "static": false,
                     "parameters": [
                         {
                             "name": "slug",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "time",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Application\\ContentRecord"
                 },
-                "insert": {
-                    "visibility": "public",
+                {
+                    "name": "insert",
                     "static": false,
                     "parameters": [
                         {
                             "name": "record",
                             "type": "Kumwe\\Content\\Application\\ContentRecord",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "update": {
-                    "visibility": "public",
+                {
+                    "name": "update",
                     "static": false,
                     "parameters": [
                         {
                             "name": "record",
                             "type": "Kumwe\\Content\\Application\\ContentRecord",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "expectedVersion",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "setDeletedAt": {
-                    "visibility": "public",
+                {
+                    "name": "setDeletedAt",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "expectedVersion",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "deletedAt",
                             "type": "?DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "updatedAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "appendRevision": {
-                    "visibility": "public",
+                {
+                    "name": "appendRevision",
                     "static": false,
                     "parameters": [
                         {
                             "name": "revision",
                             "type": "Kumwe\\Content\\Domain\\ContentRevision",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "nextRevisionNumber": {
-                    "visibility": "public",
+                {
+                    "name": "nextRevisionNumber",
                     "static": false,
                     "parameters": [
                         {
                             "name": "contentEntryId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "int"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Application\\ContentSearchRepository": {
+        {
+            "name": "Kumwe\\Content\\Application\\ContentSearchRepository",
             "kind": "interface",
-            "stability": "stable",
-            "file": "src/Application/ContentSearchRepository.php",
-            "abstract": true,
-            "final": false,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "searchForSite": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "searchForSite",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "query",
                             "type": "Kumwe\\Content\\Application\\ContentBrowseQuery",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "limit",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "offset",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Application\\IncompatibleDefinition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Application/IncompatibleDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": "DomainException",
-            "interfaces": [
-                "Throwable",
-                "Stringable"
             ],
-            "constants": {},
-            "properties": {
-                "breakingChanges": {
-                    "type": "array",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\IncompatibleDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "breakingChanges",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Application\\SiteScopedContentRepository": {
-            "kind": "interface",
-            "stability": "stable",
-            "file": "src/Application/SiteScopedContentRepository.php",
-            "abstract": true,
-            "final": false,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [
-                "Kumwe\\Content\\Application\\ContentRepository"
             ],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "allForSite": {
-                    "visibility": "public",
+            "properties": [
+                {
+                    "name": "breakingChanges",
+                    "type": "array",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\SiteScopedContentRepository",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "allForSite",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "limit",
                             "type": "int",
                             "optional": true,
+                            "default": "100",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "includeDeleted",
                             "type": "bool",
                             "optional": true,
+                            "default": "false",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "offset",
                             "type": "int",
                             "optional": true,
+                            "default": "0",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "array"
                 },
-                "findForSite": {
-                    "visibility": "public",
+                {
+                    "name": "findForSite",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "includeDeleted",
                             "type": "bool",
                             "optional": true,
+                            "default": "false",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Application\\ContentRecord"
                 },
-                "findPublishedByIdForSite": {
-                    "visibility": "public",
+                {
+                    "name": "findPublishedByIdForSite",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "time",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Application\\ContentRecord"
                 },
-                "findPublishedBySlugForSite": {
-                    "visibility": "public",
+                {
+                    "name": "findPublishedBySlugForSite",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "slug",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "time",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Application\\ContentRecord"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Application\\TranslationGroupRepository": {
+        {
+            "name": "Kumwe\\Content\\Application\\TranslationGroupRepository",
             "kind": "interface",
-            "stability": "stable",
-            "file": "src/Application/TranslationGroupRepository.php",
-            "abstract": true,
-            "final": false,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "forContent": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "forContent",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "contentId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Domain\\TranslationGroup"
                 },
-                "declareGroup": {
-                    "visibility": "public",
+                {
+                    "name": "declareGroup",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "groupId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "memberLocale",
                             "type": "Kumwe\\Localization\\Domain\\LocaleTag",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "fallback",
                             "type": "?Kumwe\\Localization\\Domain\\LocaleTag",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "guardAttachment": {
-                    "visibility": "public",
+                {
+                    "name": "guardAttachment",
                     "static": false,
                     "parameters": [
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "groupId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "contentId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Domain\\ContentEntry": {
+        {
+            "name": "Kumwe\\Content\\Domain\\ContentEntry",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/ContentEntry.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "create": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "create",
                     "static": true,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "title",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "slug",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "data",
                             "type": "array",
                             "optional": true,
+                            "default": "array (\n)",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "status",
                             "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
                             "optional": true,
+                            "default": "\\Kumwe\\Content\\Domain\\ContentStatus::Draft",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "publicationWindow",
                             "type": "?Kumwe\\Content\\Domain\\PublicationWindow",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "locale",
                             "type": "Kumwe\\Localization\\Domain\\LocaleTag|string|null",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "translationGroupId",
                             "type": "?string",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Domain\\ContentEntry"
                 },
-                "reconstitute": {
-                    "visibility": "public",
+                {
+                    "name": "reconstitute",
                     "static": true,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "title",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "slug",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "data",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "status",
                             "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "publicationWindow",
                             "type": "Kumwe\\Content\\Domain\\PublicationWindow",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "version",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "locale",
                             "type": "Kumwe\\Localization\\Domain\\LocaleTag|string|null",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "translationGroupId",
                             "type": "?string",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Domain\\ContentEntry"
                 },
-                "id": {
-                    "visibility": "public",
+                {
+                    "name": "id",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "title": {
-                    "visibility": "public",
+                {
+                    "name": "title",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "slug": {
-                    "visibility": "public",
+                {
+                    "name": "slug",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "data": {
-                    "visibility": "public",
+                {
+                    "name": "data",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                "status": {
-                    "visibility": "public",
+                {
+                    "name": "status",
                     "static": false,
                     "parameters": [],
                     "return": "Kumwe\\Content\\Domain\\ContentStatus|string"
                 },
-                "statusKey": {
-                    "visibility": "public",
+                {
+                    "name": "statusKey",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "publicationWindow": {
-                    "visibility": "public",
+                {
+                    "name": "publicationWindow",
                     "static": false,
                     "parameters": [],
                     "return": "Kumwe\\Content\\Domain\\PublicationWindow"
                 },
-                "version": {
-                    "visibility": "public",
+                {
+                    "name": "version",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                "locale": {
-                    "visibility": "public",
+                {
+                    "name": "locale",
                     "static": false,
                     "parameters": [],
                     "return": "?Kumwe\\Localization\\Domain\\LocaleTag"
                 },
-                "translationGroupId": {
-                    "visibility": "public",
+                {
+                    "name": "translationGroupId",
                     "static": false,
                     "parameters": [],
                     "return": "?string"
                 },
-                "isVisibleAt": {
-                    "visibility": "public",
+                {
+                    "name": "isVisibleAt",
                     "static": false,
                     "parameters": [
                         {
                             "name": "instant",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "bool"
                 },
-                "revise": {
-                    "visibility": "public",
+                {
+                    "name": "revise",
                     "static": false,
                     "parameters": [
                         {
                             "name": "expectedVersion",
                             "type": "Kumwe\\Content\\Domain\\ExpectedVersion",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "title",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "slug",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "data",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "publicationWindow",
                             "type": "?Kumwe\\Content\\Domain\\PublicationWindow",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Domain\\ContentEntry"
                 },
-                "reschedule": {
-                    "visibility": "public",
+                {
+                    "name": "reschedule",
                     "static": false,
                     "parameters": [
                         {
                             "name": "expectedVersion",
                             "type": "Kumwe\\Content\\Domain\\ExpectedVersion",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "publicationWindow",
                             "type": "Kumwe\\Content\\Domain\\PublicationWindow",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Domain\\ContentEntry"
                 },
-                "transition": {
-                    "visibility": "public",
+                {
+                    "name": "transition",
                     "static": false,
                     "parameters": [
                         {
                             "name": "expectedVersion",
                             "type": "Kumwe\\Content\\Domain\\ExpectedVersion",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "workflow",
                             "type": "Kumwe\\Content\\Workflow\\Domain\\Workflow",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "target",
                             "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Domain\\ContentEntry"
                 },
-                "translate": {
-                    "visibility": "public",
+                {
+                    "name": "translate",
                     "static": false,
                     "parameters": [
                         {
                             "name": "expectedVersion",
                             "type": "Kumwe\\Content\\Domain\\ExpectedVersion",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "locale",
                             "type": "Kumwe\\Localization\\Domain\\LocaleTag",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "translationGroupId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Domain\\ContentEntry"
                 },
-                "snapshot": {
-                    "visibility": "public",
+                {
+                    "name": "snapshot",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Domain\\ContentRevision": {
+        {
+            "name": "Kumwe\\Content\\Domain\\ContentRevision",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/ContentRevision.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "capture": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "capture",
                     "static": true,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "entry",
                             "type": "Kumwe\\Content\\Domain\\ContentEntry",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "revisionNumber",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "createdAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Domain\\ContentRevision"
                 },
-                "id": {
-                    "visibility": "public",
+                {
+                    "name": "id",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "contentEntryId": {
-                    "visibility": "public",
+                {
+                    "name": "contentEntryId",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "revisionNumber": {
-                    "visibility": "public",
+                {
+                    "name": "revisionNumber",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                "snapshot": {
-                    "visibility": "public",
+                {
+                    "name": "snapshot",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                "checksum": {
-                    "visibility": "public",
+                {
+                    "name": "checksum",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "createdAt": {
-                    "visibility": "public",
+                {
+                    "name": "createdAt",
                     "static": false,
                     "parameters": [],
                     "return": "DateTimeImmutable"
                 },
-                "hasValidChecksum": {
-                    "visibility": "public",
+                {
+                    "name": "hasValidChecksum",
                     "static": false,
                     "parameters": [],
                     "return": "bool"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Domain\\ContentStatus": {
-            "kind": "enum",
-            "stability": "stable",
-            "file": "src/Domain/ContentStatus.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [
-                "UnitEnum",
-                "BackedEnum"
             ],
-            "constants": {
-                "Draft": {
-                    "type": null
-                },
-                "Review": {
-                    "type": null
-                },
-                "Published": {
-                    "type": null
-                },
-                "Archived": {
-                    "type": null
-                }
-            },
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "value": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "isPublic": {
-                    "visibility": "public",
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\ContentStatus",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "isPublic",
                     "static": false,
                     "parameters": [],
                     "return": "bool"
                 },
-                "cases": {
-                    "visibility": "public",
+                {
+                    "name": "cases",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                "from": {
-                    "visibility": "public",
+                {
+                    "name": "from",
                     "static": true,
                     "parameters": [
                         {
                             "name": "value",
                             "type": "string|int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "static"
                 },
-                "tryFrom": {
-                    "visibility": "public",
+                {
+                    "name": "tryFrom",
                     "static": true,
                     "parameters": [
                         {
                             "name": "value",
                             "type": "string|int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Domain\\ContentTypeDefinition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/ContentTypeDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "id": {
+            ],
+            "properties": [
+                {
+                    "name": "name",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "site": {
-                    "type": "Kumwe\\Context\\Value\\SiteContext",
-                    "static": false,
-                    "readonly": true
-                },
-                "handle": {
+                {
+                    "name": "value",
                     "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "name": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "workflowId": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "workflowVersion": {
-                    "type": "int",
-                    "static": false,
-                    "readonly": true
-                },
-                "version": {
-                    "type": "int",
-                    "static": false,
-                    "readonly": true
-                },
-                "createdAt": {
-                    "type": "DateTimeImmutable",
-                    "static": false,
-                    "readonly": true
-                },
-                "publishedAt": {
-                    "type": "DateTimeImmutable",
-                    "static": false,
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [
+                "Draft",
+                "Review",
+                "Published",
+                "Archived"
+            ],
+            "constant_values": {
+                "Draft": "\\Kumwe\\Content\\Domain\\ContentStatus::Draft",
+                "Review": "\\Kumwe\\Content\\Domain\\ContentStatus::Review",
+                "Published": "\\Kumwe\\Content\\Domain\\ContentStatus::Published",
+                "Archived": "\\Kumwe\\Content\\Domain\\ContentStatus::Archived"
+            }
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\ContentTypeDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "handle",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "name",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "workflowId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "workflowVersion",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "schema",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "version",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "createdAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "publishedAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "schema": {
-                    "visibility": "public",
+                {
+                    "name": "schema",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                "fields": {
-                    "visibility": "public",
+                {
+                    "name": "fields",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "site",
+                    "type": "Kumwe\\Context\\Value\\SiteContext",
+                    "readonly": true
+                },
+                {
+                    "name": "handle",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowVersion",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "version",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "createdAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "publishedAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Domain\\ExpectedVersion": {
+        {
+            "name": "Kumwe\\Content\\Domain\\ExpectedVersion",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/ExpectedVersion.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "value",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "value": {
-                    "visibility": "public",
+                {
+                    "name": "value",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                "assertMatches": {
-                    "visibility": "public",
+                {
+                    "name": "assertMatches",
                     "static": false,
                     "parameters": [
                         {
                             "name": "actual",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Domain\\FieldDefinition": {
+        {
+            "name": "Kumwe\\Content\\Domain\\FieldDefinition",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/FieldDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "schema": {
-                    "type": "array",
-                    "static": false,
-                    "readonly": true
-                },
-                "key": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "required": {
-                    "type": "bool",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "key",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "schema",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "required",
                             "type": "bool",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Domain\\InvalidContentData": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/InvalidContentData.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": "DomainException",
-            "interfaces": [
-                "Throwable",
-                "Stringable"
             ],
-            "constants": {},
-            "properties": {
-                "violations": {
+            "properties": [
+                {
+                    "name": "schema",
                     "type": "array",
-                    "static": false,
+                    "readonly": true
+                },
+                {
+                    "name": "key",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "required",
+                    "type": "bool",
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\InvalidContentData",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "violations",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Domain\\InvalidTranslationGroup": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/InvalidTranslationGroup.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": "DomainException",
-            "interfaces": [
-                "Throwable",
-                "Stringable"
             ],
-            "constants": {},
-            "properties": {},
-            "methods": {},
-            "deprecated": null
+            "properties": [
+                {
+                    "name": "violations",
+                    "type": "array",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Domain\\JsonSchemaValidator": {
+        {
+            "name": "Kumwe\\Content\\Domain\\InvalidTranslationGroup",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/JsonSchemaValidator.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "assertSupported": {
-                    "visibility": "public",
+            "methods": [],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\JsonSchemaValidator",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "assertSupported",
                     "static": false,
                     "parameters": [
                         {
                             "name": "schema",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "assertValid": {
-                    "visibility": "public",
+                {
+                    "name": "assertValid",
                     "static": false,
                     "parameters": [
                         {
                             "name": "schema",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "value",
                             "type": "mixed",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Domain\\PublicationWindow": {
+        {
+            "name": "Kumwe\\Content\\Domain\\PublicationWindow",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/PublicationWindow.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "startsAt",
                             "type": "?DateTimeImmutable",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "endsAt",
                             "type": "?DateTimeImmutable",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "unbounded": {
-                    "visibility": "public",
+                {
+                    "name": "unbounded",
                     "static": true,
                     "parameters": [],
                     "return": "Kumwe\\Content\\Domain\\PublicationWindow"
                 },
-                "startsAt": {
-                    "visibility": "public",
+                {
+                    "name": "startsAt",
                     "static": false,
                     "parameters": [],
                     "return": "?DateTimeImmutable"
                 },
-                "endsAt": {
-                    "visibility": "public",
+                {
+                    "name": "endsAt",
                     "static": false,
                     "parameters": [],
                     "return": "?DateTimeImmutable"
                 },
-                "contains": {
-                    "visibility": "public",
+                {
+                    "name": "contains",
                     "static": false,
                     "parameters": [
                         {
                             "name": "instant",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "bool"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Domain\\SchemaCompatibilityChecker": {
+        {
+            "name": "Kumwe\\Content\\Domain\\SchemaCompatibilityChecker",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/SchemaCompatibilityChecker.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "breakingChanges": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "breakingChanges",
                     "static": false,
                     "parameters": [
                         {
                             "name": "before",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "after",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "array"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Domain\\TranslationGroup": {
+        {
+            "name": "Kumwe\\Content\\Domain\\TranslationGroup",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/TranslationGroup.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {
-                "MAXIMUM_MEMBERS": {
-                    "type": null
-                }
-            },
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "fallbackLocale": {
-                    "type": "Kumwe\\Localization\\Domain\\LocaleTag",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "fallbackLocale",
                             "type": "Kumwe\\Localization\\Domain\\LocaleTag",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "members",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "ofOne": {
-                    "visibility": "public",
+                {
+                    "name": "ofOne",
                     "static": true,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "member",
                             "type": "Kumwe\\Content\\Domain\\TranslationGroupMember",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Domain\\TranslationGroup"
                 },
-                "members": {
-                    "visibility": "public",
+                {
+                    "name": "members",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                "member": {
-                    "visibility": "public",
+                {
+                    "name": "member",
                     "static": false,
                     "parameters": [
                         {
                             "name": "locale",
                             "type": "Kumwe\\Localization\\Domain\\LocaleTag",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Domain\\TranslationGroupMember"
                 },
-                "publishedMembers": {
-                    "visibility": "public",
+                {
+                    "name": "publishedMembers",
                     "static": false,
                     "parameters": [
                         {
                             "name": "instant",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "array"
                 },
-                "resolve": {
-                    "visibility": "public",
+                {
+                    "name": "resolve",
                     "static": false,
                     "parameters": [
                         {
                             "name": "locale",
                             "type": "Kumwe\\Localization\\Domain\\LocaleTag",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "instant",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "?Kumwe\\Content\\Domain\\TranslationGroupMember"
                 },
-                "isTranslated": {
-                    "visibility": "public",
+                {
+                    "name": "isTranslated",
                     "static": false,
                     "parameters": [],
                     "return": "bool"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Domain\\TranslationGroupMember": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/TranslationGroupMember.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "locale": {
+            ],
+            "properties": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "fallbackLocale",
                     "type": "Kumwe\\Localization\\Domain\\LocaleTag",
-                    "static": false,
-                    "readonly": true
-                },
-                "contentId": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "slug": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "statusKey": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "publicState": {
-                    "type": "bool",
-                    "static": false,
-                    "readonly": true
-                },
-                "publicationWindow": {
-                    "type": "Kumwe\\Content\\Domain\\PublicationWindow",
-                    "static": false,
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [
+                "MAXIMUM_MEMBERS"
+            ],
+            "constant_values": {
+                "MAXIMUM_MEMBERS": "64"
+            }
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\TranslationGroupMember",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "locale",
                             "type": "Kumwe\\Localization\\Domain\\LocaleTag",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "contentId",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "slug",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "statusKey",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "publicState",
                             "type": "bool",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "publicationWindow",
                             "type": "Kumwe\\Content\\Domain\\PublicationWindow",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "isVisibleAt": {
-                    "visibility": "public",
+                {
+                    "name": "isVisibleAt",
                     "static": false,
                     "parameters": [
                         {
                             "name": "instant",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "bool"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Domain\\VersionConflict": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Domain/VersionConflict.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": "RuntimeException",
-            "interfaces": [
-                "Stringable",
-                "Throwable"
             ],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "properties": [
+                {
+                    "name": "locale",
+                    "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                    "readonly": true
+                },
+                {
+                    "name": "contentId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "slug",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "statusKey",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "publicState",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "publicationWindow",
+                    "type": "Kumwe\\Content\\Domain\\PublicationWindow",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\VersionConflict",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "expected",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "actual",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Workflow\\Domain\\InvalidWorkflowTransition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Workflow/Domain/InvalidWorkflowTransition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": "DomainException",
-            "interfaces": [
-                "Throwable",
-                "Stringable"
             ],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\InvalidWorkflowTransition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "from",
                             "type": "BackedEnum|string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "to",
                             "type": "BackedEnum|string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Workflow\\Domain\\Workflow": {
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\Workflow",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Workflow/Domain/Workflow.php",
-            "abstract": false,
-            "final": true,
-            "readonly": false,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {},
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "definition",
                             "type": "?Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
                             "optional": true,
+                            "default": "NULL",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "allows": {
-                    "visibility": "public",
+                {
+                    "name": "allows",
                     "static": false,
                     "parameters": [
                         {
                             "name": "from",
                             "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "to",
                             "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "bool"
                 },
-                "assertCanTransition": {
-                    "visibility": "public",
+                {
+                    "name": "assertCanTransition",
                     "static": false,
                     "parameters": [
                         {
                             "name": "from",
                             "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "to",
                             "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "void"
                 },
-                "allowedTargets": {
-                    "visibility": "public",
+                {
+                    "name": "allowedTargets",
                     "static": false,
                     "parameters": [
                         {
                             "name": "from",
                             "type": "Kumwe\\Content\\Domain\\ContentStatus",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "array"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
         },
-        "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition": {
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
             "kind": "class",
-            "stability": "stable",
-            "file": "src/Workflow/Domain/WorkflowDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "site": {
-                    "type": "Kumwe\\Context\\Value\\SiteContext",
-                    "static": false,
-                    "readonly": true
-                },
-                "handle": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "name": {
-                    "type": "string",
-                    "static": false,
-                    "readonly": true
-                },
-                "version": {
-                    "type": "int",
-                    "static": false,
-                    "readonly": true
-                },
-                "createdAt": {
-                    "type": "DateTimeImmutable",
-                    "static": false,
-                    "readonly": true
-                },
-                "publishedAt": {
-                    "type": "DateTimeImmutable",
-                    "static": false,
-                    "readonly": true
-                }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "id",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "site",
                             "type": "Kumwe\\Context\\Value\\SiteContext",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "handle",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "name",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "states",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "transitions",
                             "type": "array",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "version",
                             "type": "int",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "createdAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "publishedAt",
                             "type": "DateTimeImmutable",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "states": {
-                    "visibility": "public",
+                {
+                    "name": "states",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                "transitions": {
-                    "visibility": "public",
+                {
+                    "name": "transitions",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                "initialState": {
-                    "visibility": "public",
+                {
+                    "name": "initialState",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                "transition": {
-                    "visibility": "public",
+                {
+                    "name": "transition",
                     "static": false,
                     "parameters": [
                         {
                             "name": "from",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "to",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "Kumwe\\Content\\Workflow\\Domain\\WorkflowTransitionDefinition"
                 },
-                "isPublic": {
-                    "visibility": "public",
+                {
+                    "name": "isPublic",
                     "static": false,
                     "parameters": [
                         {
                             "name": "stateKey",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
                     "return": "bool"
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Workflow\\Domain\\WorkflowStateDefinition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Workflow/Domain/WorkflowStateDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "key": {
+            ],
+            "properties": [
+                {
+                    "name": "id",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "name": {
+                {
+                    "name": "site",
+                    "type": "Kumwe\\Context\\Value\\SiteContext",
+                    "readonly": true
+                },
+                {
+                    "name": "handle",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "initial": {
-                    "type": "bool",
-                    "static": false,
+                {
+                    "name": "name",
+                    "type": "string",
                     "readonly": true
                 },
-                "public": {
-                    "type": "bool",
-                    "static": false,
+                {
+                    "name": "version",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "createdAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "publishedAt",
+                    "type": "DateTimeImmutable",
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\WorkflowStateDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "key",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "name",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "initial",
                             "type": "bool",
                             "optional": true,
+                            "default": "false",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "public",
                             "type": "bool",
                             "optional": true,
+                            "default": "false",
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
-        },
-        "Kumwe\\Content\\Workflow\\Domain\\WorkflowTransitionDefinition": {
-            "kind": "class",
-            "stability": "stable",
-            "file": "src/Workflow/Domain/WorkflowTransitionDefinition.php",
-            "abstract": false,
-            "final": true,
-            "readonly": true,
-            "parent": null,
-            "interfaces": [],
-            "constants": {},
-            "properties": {
-                "from": {
+            ],
+            "properties": [
+                {
+                    "name": "key",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "to": {
+                {
+                    "name": "name",
                     "type": "string",
-                    "static": false,
                     "readonly": true
                 },
-                "requiredCapability": {
-                    "type": "Kumwe\\Access\\Capability",
-                    "static": false,
+                {
+                    "name": "initial",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "public",
+                    "type": "bool",
                     "readonly": true
                 }
-            },
-            "methods": {
-                "__construct": {
-                    "visibility": "public",
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\WorkflowTransitionDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
                     "static": false,
                     "parameters": [
                         {
                             "name": "from",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "to",
                             "type": "string",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         },
                         {
                             "name": "requiredCapability",
                             "type": "Kumwe\\Access\\Capability",
                             "optional": false,
+                            "default": null,
                             "variadic": false,
-                            "by_reference": false
+                            "reference": false
                         }
                     ],
-                    "return": null
+                    "return": ""
                 },
-                "toArray": {
-                    "visibility": "public",
+                {
+                    "name": "toArray",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            },
-            "deprecated": null
+            ],
+            "properties": [
+                {
+                    "name": "from",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "to",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "requiredCapability",
+                    "type": "Kumwe\\Access\\Capability",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
         }
-    },
-    "extension_points": [
-        "Kumwe\\Content\\Application\\ContentModelRepository",
-        "Kumwe\\Content\\Application\\ContentRepository",
-        "Kumwe\\Content\\Application\\ContentSearchRepository",
-        "Kumwe\\Content\\Application\\SiteScopedContentRepository",
-        "Kumwe\\Content\\Application\\TranslationGroupRepository"
-    ],
-    "digest_of": "src/"
+    ]
 }

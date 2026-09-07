@@ -18,6 +18,9 @@ use InvalidArgumentException;
  */
 final readonly class FieldDefinition
 {
+    /** @var array<string, mixed> Independent JSON schema fragment. @since 0.1.1 */
+    public array $schema;
+
     /**
      * Capture one field of a content type schema.
      *
@@ -29,7 +32,7 @@ final readonly class FieldDefinition
      *
      * @since   2.0.0
      */
-    public function __construct(public string $key, public array $schema, public bool $required)
+    public function __construct(public string $key, array $schema, public bool $required)
     {
         if (preg_match('/^[a-z][a-z0-9_]{0,62}$/D', $key) !== 1) {
             throw new InvalidArgumentException('A field key must be a lowercase identifier.');
@@ -37,6 +40,9 @@ final readonly class FieldDefinition
         if ($schema !== [] && array_is_list($schema)) {
             throw new InvalidArgumentException('A field definition must contain a JSON Schema object.');
         }
+        /** @var array<string, mixed> $snapshot */
+        $snapshot = JsonValueSnapshot::copy($schema);
+        $this->schema = $snapshot;
     }
 
     /**

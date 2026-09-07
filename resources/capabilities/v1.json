@@ -1,21 +1,61 @@
 {
-  "schema": "kumwe-package-capabilities/v1",
-  "package": "kumwe/content-model",
-  "namespace": "Kumwe\\Content\\",
-  "responsibility": "Portable content, revision, translation and editorial workflow models with persistence ports.",
-  "non_responsibilities": [
-    "host authorization",
-    "persistence adapters",
-    "active registries",
-    "HTTP routing",
-    "template rendering",
-    "transactions"
-  ],
-  "capabilities": [
-    {
-      "id": "content-model",
-      "description": "Portable content, revision, translation and editorial workflow models with persistence ports."
-    }
-  ],
-  "completion_claim": false
+    "schema": "kumwe-package-capabilities/v1",
+    "package": "kumwe/content-model",
+    "namespace": "Kumwe\\Content\\",
+    "responsibility": "Portable content, revision, translation and editorial workflow models with persistence ports.",
+    "non_responsibilities": [
+        "host authorization",
+        "persistence adapters",
+        "active registries",
+        "HTTP routing",
+        "template rendering",
+        "transactions"
+    ],
+    "capabilities": [
+        {
+            "id": "content-model.portable-contract",
+            "description": "Portable content, revision, translation and editorial workflow models with persistence ports.",
+            "title": "Content Model",
+            "symbols": [
+                "Kumwe\\Content\\Application\\ContentBrowseQuery",
+                "Kumwe\\Content\\Application\\ContentModelNotFound",
+                "Kumwe\\Content\\Application\\ContentModelRepository",
+                "Kumwe\\Content\\Application\\ContentNotFound",
+                "Kumwe\\Content\\Application\\ContentPage",
+                "Kumwe\\Content\\Application\\ContentRecord",
+                "Kumwe\\Content\\Application\\ContentRepository",
+                "Kumwe\\Content\\Application\\ContentSearchRepository",
+                "Kumwe\\Content\\Application\\IncompatibleDefinition",
+                "Kumwe\\Content\\Application\\SiteScopedContentRepository",
+                "Kumwe\\Content\\Application\\TranslationGroupRepository",
+                "Kumwe\\Content\\Domain\\ContentEntry",
+                "Kumwe\\Content\\Domain\\ContentRevision",
+                "Kumwe\\Content\\Domain\\ContentStatus",
+                "Kumwe\\Content\\Domain\\ContentTypeDefinition",
+                "Kumwe\\Content\\Domain\\ExpectedVersion",
+                "Kumwe\\Content\\Domain\\FieldDefinition",
+                "Kumwe\\Content\\Domain\\InvalidContentData",
+                "Kumwe\\Content\\Domain\\InvalidTranslationGroup",
+                "Kumwe\\Content\\Domain\\JsonSchemaValidator",
+                "Kumwe\\Content\\Domain\\PublicationWindow",
+                "Kumwe\\Content\\Domain\\SchemaCompatibilityChecker",
+                "Kumwe\\Content\\Domain\\TranslationGroup",
+                "Kumwe\\Content\\Domain\\TranslationGroupMember",
+                "Kumwe\\Content\\Domain\\VersionConflict",
+                "Kumwe\\Content\\Workflow\\Domain\\InvalidWorkflowTransition",
+                "Kumwe\\Content\\Workflow\\Domain\\Workflow",
+                "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
+                "Kumwe\\Content\\Workflow\\Domain\\WorkflowStateDefinition",
+                "Kumwe\\Content\\Workflow\\Domain\\WorkflowTransitionDefinition"
+            ],
+            "documentation": [
+                "docs/public-api.md",
+                "docs/architecture.md",
+                "docs/readiness-review.md"
+            ]
+        }
+    ],
+    "release": "0.1.1",
+    "native_requirements": null,
+    "deprecations": []
 }
