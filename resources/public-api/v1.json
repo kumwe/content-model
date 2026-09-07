@@ -1,0 +1,2647 @@
+{
+    "schema": "kumwe-public-api/v1",
+    "package": "kumwe/content-model",
+    "release": null,
+    "namespace": "Kumwe\\Content\\",
+    "symbols": [
+        {
+            "name": "Kumwe\\Content\\Application\\ContentBrowseQuery",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "search",
+                            "type": "string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "status",
+                            "type": "string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "contentType",
+                            "type": "string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "scope",
+                            "type": "string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sort",
+                            "type": "string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "page",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "perPage",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "withPage",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "page",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Application\\ContentBrowseQuery"
+                },
+                {
+                    "name": "toQueryParameters",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "search",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "status",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "contentType",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "scope",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "sort",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "page",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "perPage",
+                    "type": "int",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentModelNotFound",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "kind",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "?int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentModelRepository",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "contentTypes",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                {
+                    "name": "contentType",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "?int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Domain\\ContentTypeDefinition"
+                },
+                {
+                    "name": "insertContentType",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "definition",
+                            "type": "Kumwe\\Content\\Domain\\ContentTypeDefinition",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "publishContentType",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "definition",
+                            "type": "Kumwe\\Content\\Domain\\ContentTypeDefinition",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "expectedVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "workflows",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                {
+                    "name": "workflow",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "?int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition"
+                },
+                {
+                    "name": "insertWorkflow",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "definition",
+                            "type": "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "publishWorkflow",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "definition",
+                            "type": "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "expectedVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentNotFound",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentPage",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "items",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "query",
+                            "type": "Kumwe\\Content\\Application\\ContentBrowseQuery",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "hasPrevious",
+                            "type": "bool",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "hasNext",
+                            "type": "bool",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "items",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "query",
+                    "type": "Kumwe\\Content\\Application\\ContentBrowseQuery",
+                    "readonly": true
+                },
+                {
+                    "name": "hasPrevious",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "hasNext",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentRecord",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "entry",
+                            "type": "Kumwe\\Content\\Domain\\ContentEntry",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "contentTypeId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workflowId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "createdAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "updatedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "deletedAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "contentTypeVersion",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workflowVersion",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "siteIdentifier",
+                            "type": "string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "withEntry",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "entry",
+                            "type": "Kumwe\\Content\\Domain\\ContentEntry",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "updatedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Application\\ContentRecord"
+                },
+                {
+                    "name": "withDeletedAt",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "deletedAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "updatedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Application\\ContentRecord"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "entry",
+                    "type": "Kumwe\\Content\\Domain\\ContentEntry",
+                    "readonly": true
+                },
+                {
+                    "name": "contentTypeId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "createdAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "updatedAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "deletedAt",
+                    "type": "?DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "contentTypeVersion",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowVersion",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "siteIdentifier",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentRepository",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "all",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "includeDeleted",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "offset",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                {
+                    "name": "find",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "includeDeleted",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Application\\ContentRecord"
+                },
+                {
+                    "name": "findPublishedById",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "time",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Application\\ContentRecord"
+                },
+                {
+                    "name": "findPublishedBySlug",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "slug",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "time",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Application\\ContentRecord"
+                },
+                {
+                    "name": "insert",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "record",
+                            "type": "Kumwe\\Content\\Application\\ContentRecord",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "update",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "record",
+                            "type": "Kumwe\\Content\\Application\\ContentRecord",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "expectedVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "setDeletedAt",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "expectedVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "deletedAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "updatedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "appendRevision",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "revision",
+                            "type": "Kumwe\\Content\\Domain\\ContentRevision",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "nextRevisionNumber",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "contentEntryId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "int"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\ContentSearchRepository",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "searchForSite",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "query",
+                            "type": "Kumwe\\Content\\Application\\ContentBrowseQuery",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "offset",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\IncompatibleDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "breakingChanges",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "breakingChanges",
+                    "type": "array",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\SiteScopedContentRepository",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "allForSite",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "includeDeleted",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "offset",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                {
+                    "name": "findForSite",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "includeDeleted",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Application\\ContentRecord"
+                },
+                {
+                    "name": "findPublishedByIdForSite",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "time",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Application\\ContentRecord"
+                },
+                {
+                    "name": "findPublishedBySlugForSite",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "slug",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "time",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Application\\ContentRecord"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Application\\TranslationGroupRepository",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "forContent",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "contentId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Domain\\TranslationGroup"
+                },
+                {
+                    "name": "declareGroup",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "groupId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "memberLocale",
+                            "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "fallback",
+                            "type": "?Kumwe\\Localization\\Domain\\LocaleTag",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "guardAttachment",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "groupId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "contentId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\ContentEntry",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "create",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "slug",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "status",
+                            "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "publicationWindow",
+                            "type": "?Kumwe\\Content\\Domain\\PublicationWindow",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "locale",
+                            "type": "Kumwe\\Localization\\Domain\\LocaleTag|string|null",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "translationGroupId",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Domain\\ContentEntry"
+                },
+                {
+                    "name": "reconstitute",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "slug",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "status",
+                            "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "publicationWindow",
+                            "type": "Kumwe\\Content\\Domain\\PublicationWindow",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "locale",
+                            "type": "Kumwe\\Localization\\Domain\\LocaleTag|string|null",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "translationGroupId",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Domain\\ContentEntry"
+                },
+                {
+                    "name": "id",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "title",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "slug",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "data",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "status",
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Content\\Domain\\ContentStatus|string"
+                },
+                {
+                    "name": "statusKey",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "publicationWindow",
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Content\\Domain\\PublicationWindow"
+                },
+                {
+                    "name": "version",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "locale",
+                    "static": false,
+                    "parameters": [],
+                    "return": "?Kumwe\\Localization\\Domain\\LocaleTag"
+                },
+                {
+                    "name": "translationGroupId",
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                {
+                    "name": "isVisibleAt",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "instant",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                {
+                    "name": "revise",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "expectedVersion",
+                            "type": "Kumwe\\Content\\Domain\\ExpectedVersion",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "slug",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "publicationWindow",
+                            "type": "?Kumwe\\Content\\Domain\\PublicationWindow",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Domain\\ContentEntry"
+                },
+                {
+                    "name": "reschedule",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "expectedVersion",
+                            "type": "Kumwe\\Content\\Domain\\ExpectedVersion",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "publicationWindow",
+                            "type": "Kumwe\\Content\\Domain\\PublicationWindow",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Domain\\ContentEntry"
+                },
+                {
+                    "name": "transition",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "expectedVersion",
+                            "type": "Kumwe\\Content\\Domain\\ExpectedVersion",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workflow",
+                            "type": "Kumwe\\Content\\Workflow\\Domain\\Workflow",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "target",
+                            "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Domain\\ContentEntry"
+                },
+                {
+                    "name": "translate",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "expectedVersion",
+                            "type": "Kumwe\\Content\\Domain\\ExpectedVersion",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "locale",
+                            "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "translationGroupId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Domain\\ContentEntry"
+                },
+                {
+                    "name": "snapshot",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\ContentRevision",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "capture",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "entry",
+                            "type": "Kumwe\\Content\\Domain\\ContentEntry",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "revisionNumber",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "createdAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Domain\\ContentRevision"
+                },
+                {
+                    "name": "id",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "contentEntryId",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "revisionNumber",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "snapshot",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "checksum",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "createdAt",
+                    "static": false,
+                    "parameters": [],
+                    "return": "DateTimeImmutable"
+                },
+                {
+                    "name": "hasValidChecksum",
+                    "static": false,
+                    "parameters": [],
+                    "return": "bool"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\ContentStatus",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "isPublic",
+                    "static": false,
+                    "parameters": [],
+                    "return": "bool"
+                },
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Draft",
+                "Review",
+                "Published",
+                "Archived"
+            ]
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\ContentTypeDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "handle",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workflowId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workflowVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schema",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "createdAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "publishedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "schema",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "fields",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "site",
+                    "type": "Kumwe\\Context\\Value\\SiteContext",
+                    "readonly": true
+                },
+                {
+                    "name": "handle",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowVersion",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "version",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "createdAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "publishedAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\ExpectedVersion",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "value",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "assertMatches",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "actual",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\FieldDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schema",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "required",
+                            "type": "bool",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "schema",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "required",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\InvalidContentData",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "violations",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "violations",
+                    "type": "array",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\InvalidTranslationGroup",
+            "kind": "class",
+            "methods": [],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\JsonSchemaValidator",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "assertSupported",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "schema",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "assertValid",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "schema",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\PublicationWindow",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "startsAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "endsAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "unbounded",
+                    "static": true,
+                    "parameters": [],
+                    "return": "Kumwe\\Content\\Domain\\PublicationWindow"
+                },
+                {
+                    "name": "startsAt",
+                    "static": false,
+                    "parameters": [],
+                    "return": "?DateTimeImmutable"
+                },
+                {
+                    "name": "endsAt",
+                    "static": false,
+                    "parameters": [],
+                    "return": "?DateTimeImmutable"
+                },
+                {
+                    "name": "contains",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "instant",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\SchemaCompatibilityChecker",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "breakingChanges",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "before",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "after",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\TranslationGroup",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "fallbackLocale",
+                            "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "members",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "ofOne",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "member",
+                            "type": "Kumwe\\Content\\Domain\\TranslationGroupMember",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Domain\\TranslationGroup"
+                },
+                {
+                    "name": "members",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "member",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "locale",
+                            "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Domain\\TranslationGroupMember"
+                },
+                {
+                    "name": "publishedMembers",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "instant",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                {
+                    "name": "resolve",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "locale",
+                            "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "instant",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Content\\Domain\\TranslationGroupMember"
+                },
+                {
+                    "name": "isTranslated",
+                    "static": false,
+                    "parameters": [],
+                    "return": "bool"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "fallbackLocale",
+                    "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "MAXIMUM_MEMBERS"
+            ]
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\TranslationGroupMember",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "locale",
+                            "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "contentId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "slug",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "statusKey",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "publicState",
+                            "type": "bool",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "publicationWindow",
+                            "type": "Kumwe\\Content\\Domain\\PublicationWindow",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "isVisibleAt",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "instant",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "locale",
+                    "type": "Kumwe\\Localization\\Domain\\LocaleTag",
+                    "readonly": true
+                },
+                {
+                    "name": "contentId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "slug",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "statusKey",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "publicState",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "publicationWindow",
+                    "type": "Kumwe\\Content\\Domain\\PublicationWindow",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Domain\\VersionConflict",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "expected",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "actual",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\InvalidWorkflowTransition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "type": "BackedEnum|string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "to",
+                            "type": "BackedEnum|string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\Workflow",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "definition",
+                            "type": "?Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "allows",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "to",
+                            "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                {
+                    "name": "assertCanTransition",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "to",
+                            "type": "Kumwe\\Content\\Domain\\ContentStatus|string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "allowedTargets",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "type": "Kumwe\\Content\\Domain\\ContentStatus",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\WorkflowDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "site",
+                            "type": "Kumwe\\Context\\Value\\SiteContext",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "handle",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "states",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "transitions",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "createdAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "publishedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "states",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "transitions",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "initialState",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "transition",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "to",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Content\\Workflow\\Domain\\WorkflowTransitionDefinition"
+                },
+                {
+                    "name": "isPublic",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "stateKey",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "site",
+                    "type": "Kumwe\\Context\\Value\\SiteContext",
+                    "readonly": true
+                },
+                {
+                    "name": "handle",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "version",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "createdAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "publishedAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\WorkflowStateDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "initial",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "public",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "initial",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "public",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Content\\Workflow\\Domain\\WorkflowTransitionDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "to",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "requiredCapability",
+                            "type": "Kumwe\\Access\\Capability",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "from",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "to",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "requiredCapability",
+                    "type": "Kumwe\\Access\\Capability",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        }
+    ]
+}
