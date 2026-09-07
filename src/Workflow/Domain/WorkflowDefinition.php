@@ -80,10 +80,22 @@ final readonly class WorkflowDefinition
         if (mb_strlen(trim($name)) < 1 || mb_strlen(trim($name)) > 255 || $version < 1) {
             throw new InvalidArgumentException('A workflow name and version must be valid.');
         }
+        if (
+            !array_is_list($states) || count($states) > 256
+            || !array_is_list($transitions) || count($transitions) > 4096
+        ) {
+            throw new InvalidArgumentException('Workflow states and transitions must be bounded lists.');
+        }
         $keys = [];
+        $stateSnapshot = [];
+        $transitionSnapshot = [];
         $publicStates = [];
         $initial = 0;
         foreach ($states as $state) {
+            if (!$state instanceof WorkflowStateDefinition) {
+                throw new InvalidArgumentException('Every workflow state must be a validated state definition.');
+            }
+            $stateSnapshot[] = $state;
             if (isset($keys[$state->key])) {
                 throw new InvalidArgumentException('Workflow state keys must be unique.');
             }
@@ -99,6 +111,10 @@ final readonly class WorkflowDefinition
         }
         $edges = [];
         foreach ($transitions as $transition) {
+            if (!$transition instanceof WorkflowTransitionDefinition) {
+                throw new InvalidArgumentException('Every workflow transition must be a validated definition.');
+            }
+            $transitionSnapshot[] = $transition;
             if (!isset($keys[$transition->from], $keys[$transition->to])) {
                 throw new InvalidArgumentException('A transition must reference states in the workflow.');
             }
@@ -126,8 +142,8 @@ final readonly class WorkflowDefinition
             }
             $edges[$edge] = true;
         }
-        $this->states = $states;
-        $this->transitions = $transitions;
+        $this->states = $stateSnapshot;
+        $this->transitions = $transitionSnapshot;
     }
 
     /**

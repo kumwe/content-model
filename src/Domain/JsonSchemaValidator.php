@@ -51,6 +51,7 @@ final class JsonSchemaValidator
      */
     public function assertSupported(array $schema): void
     {
+        JsonValueSnapshot::copy($schema);
         $violations = [];
         $this->validateSchema($schema, '$', $violations);
         if ($violations !== []) {
@@ -80,6 +81,7 @@ final class JsonSchemaValidator
     public function assertValid(array $schema, mixed $value): void
     {
         $this->assertSupported($schema);
+        JsonValueSnapshot::copy($value);
         $violations = [];
         $this->validateValue($schema, $value, '$', $violations);
         if ($violations !== []) {

@@ -91,6 +91,8 @@ final readonly class ContentEntry
         self::assertUuid($id);
         self::assertTitle($title);
         self::assertSlug($slug);
+        /** @var array<array-key, mixed> $data */
+        $data = JsonValueSnapshot::copy($data);
         self::assertData($data);
 
         /** @var array<string, mixed> $data */
