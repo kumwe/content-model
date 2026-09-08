@@ -1,13 +1,15 @@
 # Dependency status
 
-The runtime dependency graph uses exact published Kumwe versions. The following source tags are the reviewed dependency coordinates; this table is not an external release attestation.
+The proposed Content Model 0.1.2 successor selects a coherent, exact published dependency tuple. The tag identities below were observed on 2026-09-08; they are source coordinates, not external artifact attestations.
 
 | Package | Exact version | Tag commit |
 | --- | --- | --- |
-| `kumwe/access-context` | `0.1.0` | `34241cbd0cc67934536d2921eca14b063be6fb81` |
-| `kumwe/access-control` | `0.1.0` | `54dbaa1dbffeb09ba390a5e75e8adc951c437a41` |
-| `kumwe/localization` | `0.1.0` | `672e330e2cae89dc71769d647f6d01fd2c1dea08` |
+| `kumwe/access-context` | `0.1.2` | `132c3cd7c229ceda4398e19140d1477512c27ebf` |
+| `kumwe/access-control` | `0.1.2` | `c2420d1ed03bc39eaf5d8b9f5540580c297e3b57` |
+| `kumwe/localization` | `0.1.1` | `8571ab575b9b9f2dc1b8a25b3c902d9cf44093cb` |
 
-A floating `latest`, `*` or development branch is not an immutable release coordinate. A newer direct pin must be compatible with every transitive exact pin; update the dependency train bottom-up and verify each successor before publishing a dependent package. Existing exact dependencies are retained here to avoid creating an unsatisfiable mixed graph.
+Access Control 0.1.2 selects Access Context 0.1.2, matching this package's direct pin. The public signature closure already uses these canonical packages; this change introduces no new dependency responsibility. The package workflow must prove Composer resolution, security and built-archive clean-consumer installation for the selected tuple.
 
-Composer repository configuration is root-only. Until all packages are discoverable through Packagist, a consumer must reproduce the explicit VCS repositories from composer.json and those required by its full dependency graph. The built-archive consumer gate exercises this resolution.
+`resources/release-readiness.json` records the exact coordinates and leaves external attestations null until independently supplied. `composer dependency-readiness` rejects stale, missing, extra or floating evidence coordinates. Independent release verification remains distinct from source CI and is required before core adoption.
+
+Composer repository configuration is root-only. Consumers reproduce explicit VCS repositories needed by the full graph until every coordinate is registry-discoverable. No unreleased successor or branch alias is admitted.

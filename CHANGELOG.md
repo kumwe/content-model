@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2]
+
+- Add reusable repository conformance for versioned definitions, scoped content/search, publication windows, revisions and translations.
+- Enforce complete source/test ownership inventory in the package gate.
+- Reconcile the migration handoff and readiness evidence against published baselines.
+- Align exact Access Context and Access Control dependencies to published 0.1.2, with Localization 0.1.1.
+
+
 ## [0.1.1] - 2026-09-07
 
 - Bound content and schema traversal; detach input references so entries, revisions, content types, fields and workflow definitions preserve their immutable snapshots. Validate workflow member types and bounded lists.
