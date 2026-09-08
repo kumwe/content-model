@@ -1,0 +1,187 @@
+{
+  "schema": "kumwe-test-ownership/v1",
+  "package": "kumwe/content-model",
+  "source": {
+    "src/Application/ContentBrowseQuery.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/ContentModelNotFound.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/ContentModelRepository.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/ContentNotFound.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/ContentPage.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/ContentRecord.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/ContentRepository.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/ContentSearchRepository.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/IncompatibleDefinition.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/SiteScopedContentRepository.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Application/TranslationGroupRepository.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Domain/ContentEntry.php": [
+      "tests/Domain/ContentEntryTest.php",
+      "tests/Domain/ContentRevisionTest.php",
+      "tests/Domain/ContentSnapshotBoundaryTest.php",
+      "tests/Domain/TranslationGroupTest.php"
+    ],
+    "src/Domain/ContentRevision.php": [
+      "tests/Domain/ContentRevisionTest.php",
+      "tests/Domain/ContentSnapshotBoundaryTest.php",
+      "tests/Domain/TranslationGroupTest.php"
+    ],
+    "src/Domain/ContentStatus.php": [
+      "tests/Domain/ContentEntryTest.php",
+      "tests/Domain/ContentRevisionTest.php",
+      "tests/Domain/ContentStatusTest.php",
+      "tests/Domain/TranslationGroupTest.php",
+      "tests/Workflow/WorkflowTest.php"
+    ],
+    "src/Domain/ContentTypeDefinition.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Domain/ExpectedVersion.php": [
+      "tests/Domain/ContentEntryTest.php",
+      "tests/Domain/ExpectedVersionTest.php",
+      "tests/Domain/TranslationGroupTest.php"
+    ],
+    "src/Domain/FieldDefinition.php": [
+      "tests/Domain/ContentSnapshotBoundaryTest.php"
+    ],
+    "src/Domain/InvalidContentData.php": [
+      "tests/Domain/JsonSchemaValidatorTest.php"
+    ],
+    "src/Domain/InvalidTranslationGroup.php": [
+      "tests/Domain/TranslationGroupTest.php"
+    ],
+    "src/Domain/JsonSchemaValidator.php": [
+      "tests/Domain/ContentSnapshotBoundaryTest.php",
+      "tests/Domain/JsonSchemaValidatorTest.php"
+    ],
+    "src/Domain/JsonValueSnapshot.php": [
+      "tests/ContentRepositoryConformanceTest.php"
+    ],
+    "src/Domain/PublicationWindow.php": [
+      "tests/Domain/ContentEntryTest.php",
+      "tests/Domain/ContentRevisionTest.php",
+      "tests/Domain/PublicationWindowTest.php",
+      "tests/Domain/TranslationGroupTest.php"
+    ],
+    "src/Domain/SchemaCompatibilityChecker.php": [
+      "tests/Domain/SchemaCompatibilityCheckerTest.php"
+    ],
+    "src/Domain/TranslationGroup.php": [
+      "tests/ContentRepositoryConformanceTest.php",
+      "tests/Domain/ContentEntryTest.php",
+      "tests/Domain/TranslationGroupTest.php"
+    ],
+    "src/Domain/TranslationGroupMember.php": [
+      "tests/Domain/TranslationGroupTest.php"
+    ],
+    "src/Domain/VersionConflict.php": [
+      "tests/Domain/ContentEntryTest.php",
+      "tests/Domain/ExpectedVersionTest.php"
+    ],
+    "src/Workflow/Domain/InvalidWorkflowTransition.php": [
+      "tests/Domain/ContentEntryTest.php",
+      "tests/Workflow/WorkflowTest.php"
+    ],
+    "src/Workflow/Domain/Workflow.php": [
+      "tests/Domain/ContentEntryTest.php",
+      "tests/Workflow/WorkflowDefinitionBoundaryTest.php",
+      "tests/Workflow/WorkflowTest.php"
+    ],
+    "src/Workflow/Domain/WorkflowDefinition.php": [
+      "tests/Workflow/WorkflowDefinitionBoundaryTest.php",
+      "tests/Workflow/WorkflowTest.php"
+    ],
+    "src/Workflow/Domain/WorkflowStateDefinition.php": [
+      "tests/Workflow/WorkflowDefinitionBoundaryTest.php",
+      "tests/Workflow/WorkflowTest.php"
+    ],
+    "src/Workflow/Domain/WorkflowTransitionDefinition.php": [
+      "tests/Workflow/WorkflowDefinitionBoundaryTest.php",
+      "tests/Workflow/WorkflowTest.php"
+    ]
+  },
+  "tests": {
+    "tests/Conformance/ContentRepositoryContract.php": {
+      "role": "contract",
+      "responsibility": "Reusable sequential public-port conformance assertions."
+    },
+    "tests/ContentRepositoryConformanceTest.php": {
+      "role": "test",
+      "responsibility": "Execute the reusable port contract against test-only adapters."
+    },
+    "tests/Domain/ContentEntryTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Domain/ContentRevisionTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Domain/ContentSnapshotBoundaryTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Domain/ContentStatusTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Domain/ExpectedVersionTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Domain/JsonSchemaValidatorTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Domain/PublicationWindowTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Domain/SchemaCompatibilityCheckerTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Domain/TranslationGroupTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Fixture/MemoryContentRepository.php": {
+      "role": "fixture",
+      "responsibility": "Deterministic in-memory test adapter; no durable or host guarantee."
+    },
+    "tests/Workflow/WorkflowDefinitionBoundaryTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    },
+    "tests/Workflow/WorkflowTest.php": {
+      "role": "test",
+      "responsibility": "Portable model behavior, invariants, boundary refusals and inherited error vocabulary."
+    }
+  },
+  "host_retained": [
+    "database locking and concurrent writers",
+    "authorization and trust",
+    "transactions, rollback and recovery",
+    "App composition and adapter parity"
+  ]
+}
