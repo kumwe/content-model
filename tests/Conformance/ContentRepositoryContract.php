@@ -85,7 +85,8 @@ abstract class ContentRepositoryContract extends TestCase
         string $title = 'Article',
         int $type = 200,
         int $workflowVersion = 1,
-        string $updated = '+0 seconds'
+        string $updated = '+0 seconds',
+        int $workflow = 100,
     ): ContentRecord {
         return new ContentRecord(
             ContentEntry::reconstitute(
@@ -100,7 +101,7 @@ abstract class ContentRepositoryContract extends TestCase
                 $group === null ? null : $this->id($group)
             ),
             $this->id($type),
-            $this->id(100),
+            $this->id($workflow),
             $this->at(),
             $this->at($updated),
             null,
@@ -149,17 +150,20 @@ abstract class ContentRepositoryContract extends TestCase
         $this->model()->insertWorkflow($this->workflow(101, site: 'beta'));
         $window = new PublicationWindow($this->at(), $this->at('+1 hour'));
         $this->content()->insert($this->record(1, window: $window));
-        $this->content()->insert($this->record(2, site: 'beta'));
+        $this->content()->insert($this->record(2, site: 'beta', workflow: 101));
         $this->content()->insert($this->record(3, slug: 'draft', state: 'draft'));
         $this->model()->publishWorkflow($this->workflow(version: 2, visiblePublic: false), 1);
         self::assertNull($this->content()->findPublishedById($this->id(1), $this->at('-1 microsecond')));
         self::assertNotNull($this->content()->findPublishedById($this->id(1), $this->at()));
         self::assertNotNull($this->content()->findPublishedBySlug('article', $this->at('+1 hour -1 microsecond')));
-        self::assertNull($this->content()->findPublishedBySlug('article', $this->at('+1 hour')));
+        self::assertNull($this->content()->findPublishedById($this->id(1), $this->at('+1 hour')));
         self::assertNull($this->content()->findPublishedById($this->id(3), $this->at()));
         self::assertNull($this->content()->findPublishedByIdForSite($this->site('beta'), $this->id(1), $this->at()));
         self::assertSame($this->id(1), $this->content()->findPublishedBySlugForSite($this->site(), 'article', $this->at())->entry->id());
         self::assertNull($this->content()->findPublishedBySlugForSite($this->site('gamma'), 'article', $this->at()));
+        self::assertSame($this->id(2), $this->content()->findPublishedBySlugForSite($this->site('beta'), 'article', $this->at())->entry->id());
+        self::assertNull($this->content()->findPublishedBySlugForSite($this->site(), 'article', $this->at('+1 hour')));
+        self::assertSame($this->id(2), $this->content()->findPublishedBySlugForSite($this->site('beta'), 'article', $this->at('+1 hour'))->entry->id());
         $this->content()->insert($this->record(4, slug: 'new-version', workflowVersion: 2));
         self::assertNull($this->content()->findPublishedById($this->id(4), $this->at()));
     }
