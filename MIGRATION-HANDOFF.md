@@ -198,17 +198,17 @@ source:
   examined_dependencies:
     - "php ^8.5"
     - "ext-mbstring *"
-    - "kumwe/access-context 0.1.0"
-    - "kumwe/access-control 0.1.0"
-    - "kumwe/localization 0.1.0"
+    - "kumwe/access-context 0.1.2"
+    - "kumwe/access-control 0.1.2"
+    - "kumwe/localization 0.1.1"
     - "ramsey/uuid ^4.9"
   active_related_pull_requests: []
 target:
   repository: "https://github.com/kumwe/content-model"
   artifact_identity: "kumwe/content-model"
   canonical_namespace_or_abi: "Kumwe\\Content\\"
-  branch: "codex/extraction-readiness-20260907"
-  pull_request: "https://github.com/kumwe/content-model/pull/4"
+  branch: "agent/complete-repository-conformance"
+  pull_request: "https://github.com/kumwe/content-model/pull/5"
 ownership:
   responsibility: "Portable content, revision, translation and editorial workflow models with persistence ports."
   non_responsibilities:
@@ -230,16 +230,16 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "b552d3a8e7efd77bf0e2a1d8184e4e9f517f9d2d859c0df1d0ab1e2f2c1c87ac"
+      sha256: "b37b86e8655161d77292bfea26a7b98dd49d77a93d239dec35439d19bc590305"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "810ce9091eea317ff2517de85973589ba265171ce45fdb56853418e21c254186"
+      sha256: "5db897ea5497fe34d9206bae006f941ed42fa2019994163fe7946c6e7bca504a"
     -
       path: "resources/service-map/v1.json"
-      sha256: "fb12297d53735041e3a402f0cd9fa5bea9890642d2b44eb1ca40fa46904aa90c"
+      sha256: "d3ad3d74089e7d816ff6c918c000e151b8938b3c58627ee79a24285d5e231b9d"
     -
       path: "resources/public-api/signature-details-v1.json"
-      sha256: "dd22bab668f2a709c7df64c395ed6e122d1294633a6afe538d520e225b4a3654"
+      sha256: "1be6cf1eaa7c5125913060ad020cda21438251226b270945f96e3b82cca6f9ea"
   intentionally_excluded:
     - "ContentService.php"
     - "ContentModelService.php"
@@ -878,6 +878,10 @@ native_cpp: null
 php_extension: null
 tests:
   moved_or_added:
+    - "tests/ContentRepositoryConformanceTest.php"
+    - "tests/Conformance/"
+    - "tests/Fixture/"
+    - "tests/ownership.json"
     - "tests/Domain/ContentEntryTest.php"
     - "tests/Domain/ContentRevisionTest.php"
     - "tests/Domain/ContentSnapshotBoundaryTest.php"
@@ -979,7 +983,7 @@ next_task:
     - "All dependencies and this release independently attested"
     - "Current App drift reconciled upstream"
   consumer_repository: "https://github.com/kumwe/app"
-  dependency_or_native_change: "After publication and independent verification, adopt exact kumwe/content-model 0.1.1 with its verified stable dependency graph; no floating latest or dev aliases."
+  dependency_or_native_change: "After publication and independent verification, adopt exact kumwe/content-model 0.1.2 with its verified stable dependency graph; no floating latest or dev aliases."
   namespace_or_api_replacements:
     - "Kumwe\\App\\Content\\Domain\\ContentEntry -> Kumwe\\Content\\Domain\\ContentEntry"
     - "Kumwe\\App\\Content\\Domain\\ContentRevision -> Kumwe\\Content\\Domain\\ContentRevision"
@@ -1237,6 +1241,8 @@ The framework consumer inventory covers App production references, configuration
 
 ## Test ownership
 
+The sequential port contract is now executable through `tests/ContentRepositoryConformanceTest.php`, the reusable `tests/Conformance/` suite and explicitly test-only `tests/Fixture/` adapters. `tests/ownership.json` and `composer ownership` enforce the complete source/test inventory. See [test ownership](docs/test-ownership.md) for reuse and the retained host responsibilities.
+
 All portable behavior and new boundary regression tests are owned by this repository. The machine-readable test inventory lists package tests, consumer tests to retain, split tests and prohibited duplicates. App acceptance and integration tests are retained for the later adoption phase. They were not run or claimed by this review.
 
 ## Next-task execution notes
@@ -1248,5 +1254,7 @@ Merge only after required package checks pass. Publish through the existing defa
 API JSON, signature details and Markdown are generated from source reflection and checked for byte drift. Capability and service maps use the actual App v2 governance schemas. Handoff manifest hashes describe this source tree. This is a candidate record and keeps completion_claim false; no release-verification attestation has been fabricated.
 
 ## Validation recipe and observed local results
+
+Current conformance follow-up on PHP 8.5.10: 72 tests / 247 assertions; the ownership inventory gate also passes. Published baseline 0.1.1 is observed at e468be2eb91954711ee749882d1084c89aa0f017. The 0.1.2 heading proposes a successor, not an observed release. Final-head full CI and independent artifact verification remain required.
 
 Run composer validate --strict and composer check on PHP 8.5 with real stable dependencies. Local PHP 8.5.10 source validation passed 53 tests, 143 assertions, PHPStan at the configured maximum level, coding standards, syntax, architecture and API drift checks. Where registry access was unavailable, local source validation used dependencies archived from exact published Git tags. The complete Package CI passed at source commit 3312f424df445a3b241643f2d3ec32df76314d90 ([run 34162242977](https://github.com/kumwe/content-model/actions/runs/34162242977)), including real Composer installation, security audit, package tests, release automation and the clean built-archive consumer. The same-branch handoff/schema-gate follow-up must also pass required checks before merge. The actual App PackageManifests::read parser was also used read-only to check this package governed manifests and handoff.

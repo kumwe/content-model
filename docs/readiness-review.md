@@ -1,19 +1,9 @@
-# Extraction readiness review — 2026-09-07
+# Extraction readiness review — 2026-09-08
 
-Candidate version: `0.1.1`. Published baseline: `0.1.0`.
+Proposed successor: `0.1.2`. Published baseline: [v0.1.1](https://github.com/kumwe/content-model/releases/tag/v0.1.1) at `e468be2eb91954711ee749882d1084c89aa0f017`. Review: [PR #5](https://github.com/kumwe/content-model/pull/5).
 
-Bound content and schema traversal; detach input references so entries, revisions, content types, fields and workflow definitions preserve their immutable snapshots. Validate workflow member types and bounded lists.
+The reusable suite exercises ContentRepository, SiteScopedContentRepository, ContentSearchRepository, ContentModelRepository and TranslationGroupRepository. It checks scoped paging/search, half-open publication windows with pinned workflow versions, optimistic conflicts, revisions, immutable definition history, translation fallback/site separation and the 64-member attachment ceiling. Existing snapshot and workflow bounds remain. Production source and public signatures are unchanged.
 
-The existing source map remains the extraction provenance record. Content and Navigation use App baseline `24ecf956423c18933e824b43cea1bfb9127a79a9`; the surface declarations and business contracts preserve the SDK provenance in docs/source-map.json. This review adds portable boundary behavior and package-owned tests without changing App production code or test ownership.
+The complete source/test inventory is enforced by `composer ownership`. Abstract suites and adapters stay in test-only autoload and remain outside production archives. [Test ownership](test-ownership.md) explains adapter reuse and the guarantees still requiring real host/database tests.
 
-## Runtime boundary
-
-Content and Workflow remain one package because their state and transition types form the documented dependency cycle. Content snapshots preserve finite floats, map/list ordering and revision checksum spelling while detaching PHP references. JSON traversal rejects cycles, invalid UTF-8 keys/values, depth above 64, more than 100000 nodes and more than four mebibytes of cumulative string/key bytes. Workflow definitions require lists of at most 256 states and 4096 transitions with typed immutable members. Schema and value traversal share the same bounds. No workflow authorization decision or transaction-owning ContentService moves into this package.
-
-## Verification and remaining release steps
-
-Package-owned regression tests cover the changed invariants. The public API gate now compares generated Markdown as well as JSON, including full method signatures, defaults, public properties and constant values; source file order is sorted before generation. No ConfigProvider is introduced because these values, pure algorithms and ports have no injected runtime coordinator.
-
-Local source validation uses PHP 8.5.10 and exact dependency-tag archives where registry access is unavailable. This is distinct from the supported Composer security and built-archive consumer gates in CI. Merge only after the complete package workflow passes. The candidate is not a published or independently release-verified artifact. Publication, independent artifact verification and a coordinated exact-pin consumer train remain required before App integration. App acceptance, authorization, lifecycle, persistence and browser tests remain App-owned and were not run or claimed by this package review.
-
-The complete Package CI passed at source commit 3312f424df445a3b241643f2d3ec32df76314d90 ([run 34162242977](https://github.com/kumwe/content-model/actions/runs/34162242977)), including real Composer installation, security audit, package tests, release automation and the clean built-archive consumer. The same-branch handoff/schema-gate follow-up must also pass required checks before merge.
+Local PHP 8.5.10: 72 tests / 247 assertions and ownership gate pass. The final PR must pass the full existing Composer/static/API/security/archive consumer and release automation gates. This proposed successor is not yet published or independently release-verified. A human merge, automated immutable publication and independent artifact/dependency attestation remain the release steps before later core adoption. No App integration or App acceptance result is claimed.

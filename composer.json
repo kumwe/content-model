@@ -7,9 +7,9 @@
   "require": {
     "php": "^8.5",
     "ext-mbstring": "*",
-    "kumwe/access-context": "0.1.0",
-    "kumwe/access-control": "0.1.0",
-    "kumwe/localization": "0.1.0",
+    "kumwe/access-context": "0.1.2",
+    "kumwe/access-control": "0.1.2",
+    "kumwe/localization": "0.1.1",
     "ramsey/uuid": "^4.9"
   },
   "require-dev": {
@@ -49,6 +49,7 @@
       "@architecture",
       "@analyse",
       "@cs",
+      "@dependency-readiness",
       "@ownership",
       "@test",
       "@examples",
@@ -57,7 +58,11 @@
     ],
     "composer:validate": "composer validate --strict",
     "manifests": "php tools/verify-governed-manifests.php",
-    "ownership": "php tools/verify-test-ownership.php"
+    "ownership": "php tools/verify-test-ownership.php",
+    "dependency-readiness": [
+      "bash tools/check-dependency-readiness.sh",
+      "bash tools/test-dependency-readiness.sh"
+    ]
   },
   "config": {
     "sort-packages": true
