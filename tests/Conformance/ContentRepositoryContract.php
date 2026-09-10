@@ -203,6 +203,54 @@ abstract class ContentRepositoryContract extends TestCase
         self::assertEquals($this->at('+2 minutes'), $this->content()->find($this->id(1))->updatedAt);
     }
 
+    public function testAdoptionOnlyChangesDefinitionPinsAndPreservesEntryAndRevisionHistory(): void
+    {
+        $original = $this->record(1);
+        $this->content()->insert($original);
+        $this->content()->appendRevision(ContentRevision::capture($this->id(300), $original->entry, 1, $this->at()));
+        $adopted = new ContentRecord(
+            $this->record(1, version: 99, title: 'Must not overwrite entry')->entry,
+            $this->id(201),
+            $this->id(101),
+            $this->at('+1 hour'),
+            $this->at('+2 minutes'),
+            $this->at('+1 hour'),
+            2,
+            3,
+            'beta'
+        );
+        $this->content()->adopt($adopted, 1);
+        $stored = $this->content()->find($this->id(1));
+        self::assertSame($original->entry->snapshot(), $stored->entry->snapshot());
+        self::assertSame($this->id(201), $stored->contentTypeId);
+        self::assertSame(2, $stored->contentTypeVersion);
+        self::assertSame($this->id(101), $stored->workflowId);
+        self::assertSame(3, $stored->workflowVersion);
+        self::assertEquals($original->createdAt, $stored->createdAt);
+        self::assertSame($original->siteIdentifier, $stored->siteIdentifier);
+        self::assertNull($stored->deletedAt);
+        self::assertEquals($this->at('+2 minutes'), $stored->updatedAt);
+        self::assertSame(2, $this->content()->nextRevisionNumber($this->id(1)));
+    }
+
+    public function testAdoptionRejectsStaleMissingAndTrashedEntriesWithoutChangingPins(): void
+    {
+        $this->content()->insert($this->record(1));
+        $this->content()->insert($this->record(2, slug: 'trashed'));
+        $this->content()->setDeletedAt($this->id(2), 1, $this->at(), $this->at());
+        foreach ([[1, 2], [99, 1], [2, 2]] as [$id, $expectedVersion]) {
+            try {
+                $this->content()->adopt($this->record($id, type: 201, workflowVersion: 2), $expectedVersion);
+                self::fail('Stale, missing or trashed adoption accepted.');
+            } catch (VersionConflict) {
+                self::assertSame($this->id(200), $this->content()->find($this->id(1))->contentTypeId);
+                self::assertSame(1, $this->content()->find($this->id(1))->workflowVersion);
+                self::assertNull($this->content()->find($this->id(99)));
+                self::assertSame($this->id(200), $this->content()->find($this->id(2), true)->contentTypeId);
+            }
+        }
+    }
+
     public function testRevisionNumbersUseHighestStoredNumberPerEntry(): void
     {
         foreach ([1, 2] as $id) {

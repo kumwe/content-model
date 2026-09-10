@@ -1,7 +1,7 @@
 {
     "schema": "kumwe-public-api-details/v1",
     "package": "kumwe/content-model",
-    "release": "0.1.2",
+    "release": "0.2.0",
     "namespace": "Kumwe\\Content\\",
     "symbols": [
         {
@@ -750,6 +750,29 @@
                 },
                 {
                     "name": "update",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "record",
+                            "type": "Kumwe\\Content\\Application\\ContentRecord",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "expectedVersion",
+                            "type": "int",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "adopt",
                     "static": false,
                     "parameters": [
                         {

@@ -86,6 +86,23 @@ final class MemoryContentRepository implements SiteScopedContentRepository, Cont
         $this->records[$record->entry->id()] = $record;
     }
 
+    public function adopt(ContentRecord $record, int $expectedVersion): void
+    {
+        $stored = $this->find($record->entry->id());
+        $this->requireVersion($stored?->entry->version(), $expectedVersion);
+        $this->records[$record->entry->id()] = new ContentRecord(
+            $stored->entry,
+            $record->contentTypeId,
+            $record->workflowId,
+            $stored->createdAt,
+            $record->updatedAt,
+            $stored->deletedAt,
+            $record->contentTypeVersion,
+            $record->workflowVersion,
+            $stored->siteIdentifier
+        );
+    }
+
     public function setDeletedAt(string $id, int $expectedVersion, ?DateTimeImmutable $deletedAt, DateTimeImmutable $updatedAt): void
     {
         $record = $this->find($id, true);

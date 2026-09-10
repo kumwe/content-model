@@ -1,6 +1,6 @@
 # Dependency status
 
-The proposed Content Model 0.1.2 successor selects a coherent, exact published dependency tuple. The tag identities below were observed on 2026-09-08; they are source coordinates, not external artifact attestations.
+The Content Model 0.2.0 adoption successor retains a coherent, exact published dependency tuple. The tag identities below were observed on 2026-09-08; they are source coordinates, not external artifact attestations.
 
 | Package | Exact version | Tag commit |
 | --- | --- | --- |
