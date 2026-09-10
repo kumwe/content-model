@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0]
+
+- Preserve the App content-definition adoption port in `ContentRepository::adopt()`, including optimistic version checks and unchanged entry/revision data.
+- Require adapters to implement this additional method; the pre-1.0 minor successor records the interface compatibility break.
+- Extend reusable repository conformance with adoption and stale, missing, and trashed-entry refusal.
+- Publication follows merge and the existing package checks; App adoption uses the published successor.
+
 ## [0.1.2]
 
 - Add reusable repository conformance for versioned definitions, scoped content/search, publication windows, revisions and translations.

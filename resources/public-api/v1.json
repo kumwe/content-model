@@ -1,7 +1,7 @@
 {
     "schema": "kumwe-package-public-api/v1",
     "package": "kumwe/content-model",
-    "release": "0.1.2",
+    "release": "0.2.0",
     "namespace": "Kumwe\\Content\\",
     "symbols": {
         "Kumwe\\Content\\Application\\ContentBrowseQuery": {
@@ -746,6 +746,27 @@
                     "return": "void"
                 },
                 "update": {
+                    "visibility": "public",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "record",
+                            "type": "Kumwe\\Content\\Application\\ContentRecord",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        },
+                        {
+                            "name": "expectedVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "by_reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "adopt": {
                     "visibility": "public",
                     "static": false,
                     "parameters": [

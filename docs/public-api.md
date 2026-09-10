@@ -571,6 +571,29 @@ public function insert(Kumwe\Content\Application\ContentRecord $record): void;
 public function update(Kumwe\Content\Application\ContentRecord $record, int $expectedVersion): void;
 ```
 
+### adopt
+
+/**
+     * Re-pin an entry to the content type and workflow versions the record carries, leaving the entry as is.
+     *
+     * `update()` never rewrites the pinned definition versions, and adoption never rewrites the entry: the
+     * row keeps its title, slug, data, state and optimistic version and only follows its type to the
+     * adopted version, still guarded by the version the caller read.
+     *
+     * @param   ContentRecord  $record           Record carrying the adopted type and workflow versions.
+     * @param   int            $expectedVersion  Entry version the caller read before adopting.
+     *
+     * @return  void
+     *
+     * @throws  \Kumwe\Content\Domain\VersionConflict  When no untrashed entry matches the expected version.
+     *
+     * @since   0.2.0
+     */
+
+```php
+public function adopt(Kumwe\Content\Application\ContentRecord $record, int $expectedVersion): void;
+```
+
 ### setDeletedAt
 
 /**

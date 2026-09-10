@@ -207,8 +207,8 @@ target:
   repository: "https://github.com/kumwe/content-model"
   artifact_identity: "kumwe/content-model"
   canonical_namespace_or_abi: "Kumwe\\Content\\"
-  branch: "agent/complete-repository-conformance"
-  pull_request: "https://github.com/kumwe/content-model/pull/5"
+  branch: "agent/preserve-content-definition-adoption"
+  pull_request: null
 ownership:
   responsibility: "Portable content, revision, translation and editorial workflow models with persistence ports."
   non_responsibilities:
@@ -230,16 +230,16 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "b37b86e8655161d77292bfea26a7b98dd49d77a93d239dec35439d19bc590305"
+      sha256: "337556f5c7d7c8afeb7da7987bfe9624ef0645783463942e25ce10ceff3f6f61"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "5db897ea5497fe34d9206bae006f941ed42fa2019994163fe7946c6e7bca504a"
+      sha256: "7391c88b0f89aa3b9229af97c12e4b274166c547d80f9af31f988c0a93dbda24"
     -
       path: "resources/service-map/v1.json"
-      sha256: "d3ad3d74089e7d816ff6c918c000e151b8938b3c58627ee79a24285d5e231b9d"
+      sha256: "57dae31e71b99912c0fbc3e7f147b47311f14772145f586056a30559f15c4b7f"
     -
       path: "resources/public-api/signature-details-v1.json"
-      sha256: "1be6cf1eaa7c5125913060ad020cda21438251226b270945f96e3b82cca6f9ea"
+      sha256: "e022ad87380dcf0c7ccc54d808c402ceb5be0200a2010c4a6f3829184ad3b1e2"
   intentionally_excluded:
     - "ContentService.php"
     - "ContentModelService.php"
@@ -983,7 +983,7 @@ next_task:
     - "All dependencies and this release independently attested"
     - "Current App drift reconciled upstream"
   consumer_repository: "https://github.com/kumwe/app"
-  dependency_or_native_change: "After publication and independent verification, adopt exact kumwe/content-model 0.1.2 with its verified stable dependency graph; no floating latest or dev aliases."
+  dependency_or_native_change: "After publication and independent verification, adopt exact kumwe/content-model 0.2.0 with its verified stable dependency graph; no floating latest or dev aliases."
   namespace_or_api_replacements:
     - "Kumwe\\App\\Content\\Domain\\ContentEntry -> Kumwe\\Content\\Domain\\ContentEntry"
     - "Kumwe\\App\\Content\\Domain\\ContentRevision -> Kumwe\\Content\\Domain\\ContentRevision"
@@ -1218,14 +1218,14 @@ decisions:
   - "Full original source digests remain in docs/source-map.json; governed extracted-symbol inventory uses the exact v2 schema."
   - "Owner package contracts are implemented; App adoption and legacy deletion remain a separate consumer phase."
 blockers:
-  - "Review and merge the 0.1.1 source release record after required CI passes."
+  - "Merge the 0.2.0 content-definition adoption successor after required CI passes."
   - "Verify default-branch publication, exact artifact digest and independent release verification before App adoption."
 ---
 # Migration handoff
 
 ## Migration/implementation summary
 
-Content entry and schema inputs now take bounded immutable JSON snapshots. Workflow definitions enforce typed, bounded, reference-free lists. Existing portable content, revision, translation, workflow and persistence-port ownership is retained. This branch records candidate 0.1.1; the published baseline remains 0.1.0.
+Content entry and schema inputs now take bounded immutable JSON snapshots. Workflow definitions enforce typed, bounded, reference-free lists. Existing portable content, revision, translation, workflow and persistence-port ownership is retained. This branch records candidate 0.2.0. It restores the ContentRepository::adopt() port introduced in App after the original extraction, preserving definition repinning without changing entry data, version or revision history. The required interface addition is a pre-1.0 minor compatibility break for repository adapters.
 
 ## Public API and responsibility
 
@@ -1255,6 +1255,6 @@ API JSON, signature details and Markdown are generated from source reflection an
 
 ## Validation recipe and observed local results
 
-Current conformance follow-up on PHP 8.5.10: 72 tests / 250 assertions; the ownership inventory gate also passes. Published baseline 0.1.1 is observed at e468be2eb91954711ee749882d1084c89aa0f017. The 0.1.2 heading proposes a successor, not an observed release. Final-head full CI and independent artifact verification remain required.
+Current conformance follow-up on PHP 8.5.10: 72 tests / 250 assertions; the ownership inventory gate also passes. Published baseline 0.1.1 is observed at e468be2eb91954711ee749882d1084c89aa0f017. Those observations describe the 0.1.2 conformance work; the current 0.2.0 heading proposes the content-definition adoption successor. Final-head full CI and independent artifact verification remain required.
 
 Run composer validate --strict and composer check on PHP 8.5 with real stable dependencies. Local PHP 8.5.10 source validation passed 53 tests, 143 assertions, PHPStan at the configured maximum level, coding standards, syntax, architecture and API drift checks. Where registry access was unavailable, local source validation used dependencies archived from exact published Git tags. The complete Package CI passed at source commit 3312f424df445a3b241643f2d3ec32df76314d90 ([run 34162242977](https://github.com/kumwe/content-model/actions/runs/34162242977)), including real Composer installation, security audit, package tests, release automation and the clean built-archive consumer. The same-branch handoff/schema-gate follow-up must also pass required checks before merge. The actual App PackageManifests::read parser was also used read-only to check this package governed manifests and handoff.
