@@ -208,7 +208,7 @@ target:
   artifact_identity: "kumwe/content-model"
   canonical_namespace_or_abi: "Kumwe\\Content\\"
   branch: "agent/preserve-content-definition-adoption"
-  pull_request: null
+  pull_request: "https://github.com/kumwe/content-model/pull/6"
 ownership:
   responsibility: "Portable content, revision, translation and editorial workflow models with persistence ports."
   non_responsibilities:
@@ -1254,6 +1254,8 @@ Merge only after required package checks pass. Publish through the existing defa
 API JSON, signature details and Markdown are generated from source reflection and checked for byte drift. Capability and service maps use the actual App v2 governance schemas. Handoff manifest hashes describe this source tree. This is a candidate record and keeps completion_claim false; no release-verification attestation has been fabricated.
 
 ## Validation recipe and observed local results
+
+Content-definition adoption follow-up (0.2.0): PHP 8.5.10 passes 74 tests / 272 assertions, API, governed manifests, architecture, maximum-level static analysis, coding standards, dependency coordinates, ownership and examples. Hosted complete Package CI, including audit and isolated archive consumption, passed at 60daddfd4c5ff48e287ae0353f4f8ac441b30456 ([run 34474521226](https://github.com/kumwe/content-model/actions/runs/34474521226)). Publication and App adoption are still separate steps.
 
 Current conformance follow-up on PHP 8.5.10: 72 tests / 250 assertions; the ownership inventory gate also passes. Published baseline 0.1.1 is observed at e468be2eb91954711ee749882d1084c89aa0f017. Those observations describe the 0.1.2 conformance work; the current 0.2.0 heading proposes the content-definition adoption successor. Final-head full CI and independent artifact verification remain required.
 
