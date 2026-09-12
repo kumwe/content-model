@@ -1,6 +1,6 @@
 # Dependency status
 
-The Content Model 0.2.0 adoption successor retains a coherent, exact published dependency tuple. The tag identities below were observed on 2026-09-08; they are source coordinates, not external artifact attestations.
+The Content Model 0.2.0 package retains a coherent, exact published dependency tuple. The tag identities below were observed on 2026-09-08; they are source coordinates, not external artifact attestations.
 
 | Package | Exact version | Tag commit |
 | --- | --- | --- |
@@ -12,4 +12,5 @@ Access Control 0.1.2 selects Access Context 0.1.2, matching this package's direc
 
 `resources/release-readiness.json` records the exact coordinates and leaves external attestations null until independently supplied. `composer dependency-readiness` rejects stale, missing, extra or floating evidence coordinates. Independent release verification remains distinct from source CI and is required before core adoption.
 
-Composer repository configuration is root-only. Consumers reproduce explicit VCS repositories needed by the full graph until every coordinate is registry-discoverable. No unreleased successor or branch alias is admitted.
+All declared Kumwe dependencies are available through Packagist. Composer uses ordinary registry resolution;
+no root-only VCS override is required. Exact versions and dependency readiness evidence remain unchanged.

@@ -11,6 +11,5 @@ Bound content and schema traversal; detach input references so entries, revision
 `ContentRepository` adds required `adopt(ContentRecord $record, int $expectedVersion): void`.
 Adapters must update only content-type/workflow identifiers and pinned versions plus `updatedAt`,
 while preserving the stored entry, optimistic entry version, site, creation/deletion state and revisions.
-Missing, trashed and stale-version entries must raise `VersionConflict`. This reconciles the existing
-App adoption method added after the original extraction; it does not introduce a new App workflow.
+Missing, trashed and stale-version entries must raise `VersionConflict`. This is the portable content-definition adoption contract implemented by Core storage adapters.
 The additional required interface method is a breaking adapter contract, hence the pre-1.0 minor release.
