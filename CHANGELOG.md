@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Standardize package documentation, linked badges and the Core/release contracts.
+- Remove the obsolete Access Control VCS override; retain exact versions and validate Packagist resolution.
+
 ## [0.2.0]
 
 - Preserve the App content-definition adoption port in `ContentRepository::adopt()`, including optimistic version checks and unchanged entry/revision data.

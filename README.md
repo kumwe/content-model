@@ -1,15 +1,53 @@
-# content-model
+# Kumwe Content Model
 
-Portable content, revision, translation and editorial workflow models with persistence ports.
+[![Packagist version][version-badge]][packagist]
+[![Package CI][ci-badge]][ci]
+[![PHP requirement][php-badge]](composer.json)
+[![License: Apache-2.0][license-badge]](LICENSE)
 
-Requires PHP 8.5 and the runtime dependencies in `composer.json`. The canonical namespace is `Kumwe\Content\`. Published baseline: 0.1.0. This branch records the 0.1.1 successor for publication after merge and the complete package gate. Independently verify that published artifact before App adoption.
+Portable content, revision, translation and editorial workflow models with persistence ports, under
+`Kumwe\Content\`. The package provides immutable definitions and snapshots, bounded workflow declarations,
+translation groups, scoped queries and reusable repository contracts.
 
-Run `composer install`, `composer check`, and `composer examples`. [Public API](docs/public-api.md), [architecture](docs/architecture.md), [integration](docs/integration.md), and [release protocol](docs/releasing.md) describe the contract.
+## Installation and usage
 
-The package has no ConfigProvider. Values are constructed directly; ports are supplied by the host. Deterministic pure operations do not capture a site, actor, request, connection or container. App owns authorization, transactions, persistence, dispatch and presentation.
+```sh
+composer require kumwe/content-model:0.2.0
+```
 
-Released consumers exact-pin pre-1.0 versions. Apache-2.0; inherited source behavior is preserved except the explicitly documented bounded-input decisions.
+PHP 8.5 and mbstring are required. Composer resolves the exact Kumwe dependencies from Packagist; consumers
+need no custom VCS repository definitions. Values are constructed directly and repository ports are supplied by
+the host. There is no ConfigProvider or captured site, actor, request, connection or container.
 
-## Current extraction review
+See the [standalone example](examples/standalone.php), [public API](docs/public-api.md),
+[Core contract](docs/core-contract.md) and [integration](docs/integration.md).
 
-See [readiness review](docs/readiness-review.md) for the `0.1.1` candidate, current portable boundaries, package-owned regression coverage and the remaining publication/verification steps. [Dependency status](docs/dependency-decision.md) records the coherent exact release graph.
+## Compatibility and status
+
+The published 0.2.0 contract requires `ContentRepository::adopt()` for content-definition adoption. Adapters
+preserve entry/revision data and reject stale, missing or trashed records as documented in
+[compatibility](COMPATIBILITY.md). Pre-1.0 consumers pin exact versions.
+
+Core owns authorization, transactions, persistence adapters, dispatch and presentation. Package methods do not
+establish authority. Publication and package CI remain separate from independent consumer verification and Core
+acceptance. [Dependency status](docs/dependency-decision.md) records the current exact dependency graph.
+
+## Development
+
+```sh
+composer install
+composer check
+composer examples
+```
+
+The full gate checks syntax, generated API and governed manifests, architecture, static analysis, coding
+standards, dependency identities, test ownership, examples, security and a clean no-dev archive consumer.
+See [repository guarantees](docs/readiness-review.md), [test ownership](docs/test-ownership.md),
+[release process](docs/releasing.md), [release record](docs/release-record.md) and [security](SECURITY.md).
+
+[version-badge]: https://img.shields.io/packagist/v/kumwe/content-model
+[packagist]: https://packagist.org/packages/kumwe/content-model
+[ci-badge]: https://github.com/kumwe/content-model/actions/workflows/ci.yml/badge.svg?branch=main
+[ci]: https://github.com/kumwe/content-model/actions/workflows/ci.yml
+[php-badge]: https://img.shields.io/packagist/dependency-v/kumwe/content-model/php
+[license-badge]: https://img.shields.io/github/license/kumwe/content-model
